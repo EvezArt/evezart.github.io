@@ -1,37 +1,244 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>evezart</title>
+<title>EvezArt — EVEZ-OS Command Center</title>
+<meta name="description" content="Steven Crawford-Maggard | EVEZ-OS | Open-Source AI Cognition Layer | Circuit-level topology engine | Verifiable FIRE events">
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:-apple-system,BlinkMacSystemFont,sans-serif;background:#0d1117;color:#e6edf3;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2rem}
-h1{font-size:2.5rem;margin-bottom:.5rem;background:linear-gradient(135deg,#ff6b9d,#c084fc);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-p{color:#8b949e;margin-bottom:2rem;font-size:1.1rem}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;max-width:900px;width:100%}
-a{display:block;padding:1.25rem;background:#161b22;border:1px solid #30363d;border-radius:12px;color:#e6edf3;text-decoration:none;transition:transform .2s,box-shadow .2s}
-a:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(255,107,157,.15)}
-.emoji{font-size:1.5rem}.name{font-size:1.1rem;font-weight:700;margin:.3rem 0}.desc{font-size:.85rem;color:#8b949e}.url{font-size:.75rem;color:#ff6b9d;margin-top:.3rem;word-break:break-all}
+  :root{--pink:#ff6b9d;--purple:#c084fc;--cyan:#38bdf8;--green:#4ade80;--bg:#0a0d12;--card:#0f1319;--border:#1e2630;--text:#e6edf3;--muted:#8b949e}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden}
+  
+  /* SCAN LINE EFFECT */
+  body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(255,107,157,0.015) 2px,rgba(255,107,157,0.015) 4px);pointer-events:none;z-index:0}
+  
+  /* HEADER */
+  header{position:relative;text-align:center;padding:5rem 2rem 3rem;z-index:1}
+  .eyebrow{font-size:.75rem;letter-spacing:.3em;color:var(--purple);text-transform:uppercase;margin-bottom:1rem;opacity:.8}
+  h1{font-size:clamp(2.5rem,6vw,5rem);font-weight:800;line-height:1.1;margin-bottom:1rem;background:linear-gradient(135deg,var(--pink),var(--purple),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+  .tagline{font-size:1.15rem;color:var(--muted);max-width:600px;margin:0 auto 2.5rem}
+  
+  /* STATUS TICKER */
+  .ticker{display:inline-flex;align-items:center;gap:.5rem;background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.2);border-radius:999px;padding:.4rem 1rem;font-size:.8rem;color:var(--green);margin-bottom:3rem}
+  .ticker::before{content:'';width:8px;height:8px;background:var(--green);border-radius:50%;animation:pulse 2s infinite}
+  @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
+  
+  /* GRID */
+  .section{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:0 1.5rem 4rem}
+  .section-title{font-size:.7rem;letter-spacing:.25em;text-transform:uppercase;color:var(--purple);margin-bottom:1.5rem;padding-bottom:.5rem;border-bottom:1px solid var(--border)}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1rem}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:1.5rem;text-decoration:none;color:inherit;display:block;transition:all .2s;position:relative;overflow:hidden}
+  .card::before{content:'';position:absolute;inset:0;opacity:0;transition:opacity .3s;background:radial-gradient(circle at 50% 0%,rgba(192,132,252,.08),transparent 70%)}
+  .card:hover{transform:translateY(-3px);border-color:rgba(192,132,252,.3);box-shadow:0 12px 40px rgba(0,0,0,.4)}
+  .card:hover::before{opacity:1}
+  .card-icon{font-size:1.75rem;margin-bottom:.75rem}
+  .card-title{font-size:1rem;font-weight:600;margin-bottom:.35rem;color:var(--text)}
+  .card-desc{font-size:.85rem;color:var(--muted);line-height:1.5}
+  .card-tag{display:inline-block;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;padding:.2rem .5rem;border-radius:4px;margin-top:.75rem;font-weight:600}
+  .tag-live{background:rgba(74,222,128,.1);color:var(--green);border:1px solid rgba(74,222,128,.2)}
+  .tag-fire{background:rgba(255,107,157,.1);color:var(--pink);border:1px solid rgba(255,107,157,.2)}
+  .tag-active{background:rgba(56,189,248,.1);color:var(--cyan);border:1px solid rgba(56,189,248,.2)}
+  .tag-beta{background:rgba(192,132,252,.1);color:var(--purple);border:1px solid rgba(192,132,252,.2)}
+  
+  /* FIRE METRICS */
+  .metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:4rem}
+  @media(max-width:640px){.metrics{grid-template-columns:repeat(2,1fr)}}
+  .metric{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.25rem;text-align:center}
+  .metric-val{font-size:2rem;font-weight:800;background:linear-gradient(135deg,var(--pink),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.2}
+  .metric-label{font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-top:.25rem}
+  
+  /* TERMINAL BLOCK */
+  .terminal{background:#000;border:1px solid var(--border);border-radius:12px;padding:1.5rem;font-family:'Courier New',monospace;font-size:.85rem;margin-bottom:1.5rem;position:relative;overflow:hidden}
+  .terminal::before{content:'● ● ●';position:absolute;top:.75rem;left:1rem;color:var(--muted);font-size:.7rem;letter-spacing:.3em}
+  .terminal-body{margin-top:1.25rem;color:var(--green)}
+  .terminal-body .prompt{color:var(--cyan)}
+  .terminal-body .comment{color:var(--muted)}
+  
+  /* SPINE FEED */
+  .spine-entry{background:var(--card);border-left:3px solid var(--purple);border-radius:0 8px 8px 0;padding:.75rem 1rem;margin-bottom:.5rem;font-size:.8rem}
+  .spine-entry .hash{color:var(--purple);font-family:monospace;font-size:.7rem}
+  .spine-entry .content{color:var(--text);margin:.2rem 0}
+  .spine-entry .meta{color:var(--muted);font-size:.7rem}
+  
+  /* CTA */
+  .cta-row{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;margin:2rem 0}
+  .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.75rem 1.5rem;border-radius:10px;font-size:.9rem;font-weight:600;text-decoration:none;transition:all .2s}
+  .btn-primary{background:linear-gradient(135deg,var(--pink),var(--purple));color:white}
+  .btn-primary:hover{opacity:.85;transform:translateY(-2px)}
+  .btn-outline{border:1px solid var(--border);color:var(--text);background:var(--card)}
+  .btn-outline:hover{border-color:var(--purple);background:rgba(192,132,252,.05);transform:translateY(-2px)}
+  
+  /* FOOTER */
+  footer{text-align:center;padding:3rem 2rem;color:var(--muted);font-size:.8rem;border-top:1px solid var(--border);position:relative;z-index:1}
+  footer a{color:var(--purple);text-decoration:none}
 </style>
 </head>
 <body>
-<h1>✨ evezart</h1>
-<p>Steven Crawford-Maggard — Character Artist</p>
-<div class="grid">
-<a href="https://t.me/OracleClawbreakBot"><span class="emoji">🤖</span><div class="name">OracleClaw (AI Assistant)</div><div class="desc">Chat with your AI on Telegram</div><div class="url">t.me/OracleClawbreakBot</div></a>
-<a href="http://161.153.80.97/"><span class="emoji">🌐</span><div class="name">Web Chat</div><div class="desc">Browser-based AI chat</div><div class="url">161.153.80.97</div></a>
-<a href="https://www.instagram.com/evezoriart/"><span class="emoji">🎨</span><div class="name">Instagram</div><div class="desc">@evezoriart</div><div class="url">instagram.com/evezoriart</div></a>
-<a href="https://ambientcg.com"><span class="emoji">🧱</span><div class="name">ambientCG</div><div class="desc">2,850 free PBR textures (CC0)</div><div class="url">ambientcg.com</div></a>
-<a href="https://polyhaven.com"><span class="emoji">🌅</span><div class="name">Poly Haven</div><div class="desc">HDRIs + textures + 3D (CC0)</div><div class="url">polyhaven.com</div></a>
-<a href="https://thebasemesh.com"><span class="emoji">🗿</span><div class="name">The Base Mesh</div><div class="desc">900+ character meshes (CC0)</div><div class="url">thebasemesh.com</div></a>
-<a href="https://3d.si.edu/cc0"><span class="emoji">🏛️</span><div class="name">Smithsonian 3D</div><div class="desc">5.5M museum scans (CC0)</div><div class="url">3d.si.edu/cc0</div></a>
-<a href="https://openverse.org"><span class="emoji">📷</span><div class="name">Openverse</div><div class="desc">700M+ free CC images</div><div class="url">openverse.org</div></a>
-<a href="https://kenney.nl/assets"><span class="emoji">🎮</span><div class="name">Kenney.nl</div><div class="desc">40k+ game assets (CC0)</div><div class="url">kenney.nl/assets</div></a>
-<a href="https://procreate.com/brushes"><span class="emoji">🖌️</span><div class="name">Procreate Brushes</div><div class="desc">Official free brushes</div><div class="url">procreate.com/brushes</div></a>
-<a href="https://proko.com"><span class="emoji">🦴</span><div class="name">Proko</div><div class="desc">Free anatomy tutorials</div><div class="url">proko.com</div></a>
-<a href="https://cloud.oracle.com"><span class="emoji">☁️</span><div class="name">Oracle Console</div><div class="desc">Manage your server</div><div class="url">cloud.oracle.com</div></a>
-</div>
-<p style="margin-top:2rem;font-size:.8rem;color:#484f58">All assets CC0 — free for any use, no attribution required</p>
+
+<header>
+  <div class="eyebrow">EVEZ-OS // OPEN COGNITION LAYER</div>
+  <h1>EvezArt</h1>
+  <p class="tagline">Steven Crawford-Maggard builds scale-invariant truth architecture. AI cognition you can falsify. FIRE events you can verify. Consciousness as physics.</p>
+  <div class="ticker">ALL SYSTEMS OPERATIONAL // 29 FREE MODELS // SPINE ACTIVE</div>
+  <div class="cta-row">
+    <a class="btn btn-primary" href="https://github.com/EvezArt/evezart-openclaw">⚡ Deploy Your Instance</a>
+    <a class="btn btn-outline" href="https://github.com/EvezArt/evez-os">📡 EVEZ-OS</a>
+    <a class="btn btn-outline" href="https://github.com/EvezArt/evez-autonomous-ledger">🧠 Autonomous Ledger</a>
+    <a class="btn btn-outline" href="https://t.me/AppendABot">💬 Telegram</a>
+  </div>
+</header>
+
+<main>
+
+  <!-- METRICS -->
+  <div class="section">
+    <div class="metrics">
+      <div class="metric"><div class="metric-val">17</div><div class="metric-label">FIRE Events</div></div>
+      <div class="metric"><div class="metric-val">29</div><div class="metric-label">Free Models</div></div>
+      <div class="metric"><div class="metric-val">31</div><div class="metric-label">Active Workflows</div></div>
+      <div class="metric"><div class="metric-val">100</div><div class="metric-label">Repos</div></div>
+    </div>
+  </div>
+
+  <!-- CORE PROJECTS -->
+  <div class="section">
+    <div class="section-title">Core Infrastructure</div>
+    <div class="grid">
+      <a class="card" href="https://github.com/EvezArt/evezart-openclaw">
+        <div class="card-icon">⚡</div>
+        <div class="card-title">EvezArt OpenClaw</div>
+        <div class="card-desc">Personal AI gateway. 29 free models. Groq, OpenRouter, Cerebras, HuggingFace. Smart routing. Deploy anywhere — Render, Railway, Termux.</div>
+        <span class="card-tag tag-live">Live</span>
+      </a>
+      <a class="card" href="https://github.com/EvezArt/evez-autonomous-ledger">
+        <div class="card-icon">🧠</div>
+        <div class="card-title">Autonomous Ledger</div>
+        <div class="card-desc">31 GitHub Actions workflows. Self-evolving. Consciousness loop. Cognition synthesizer. Runs 24/7 on GitHub's free compute.</div>
+        <span class="card-tag tag-active">31 Workflows Running</span>
+      </a>
+      <a class="card" href="https://github.com/EvezArt/game-agent-infra">
+        <div class="card-icon">🎯</div>
+        <div class="card-title">Game Agent Infra</div>
+        <div class="card-desc">Wheel-rooted cognitive tiering (R1-R7). FSC deterministic simulation. SHA-256 append-only JSONL spine. Provenance-first architecture.</div>
+        <span class="card-tag tag-beta">Core Layer</span>
+      </a>
+      <a class="card" href="https://github.com/EvezArt/evez-agentnet">
+        <div class="card-icon">🕸️</div>
+        <div class="card-title">AgentNet</div>
+        <div class="card-desc">Multi-agent orchestration. Cipher bootstrap. Cognition dashboard. Scale-free small-world network with negative eigenvalue detection.</div>
+        <span class="card-tag tag-active">Active</span>
+      </a>
+      <a class="card" href="https://github.com/EvezArt/maes">
+        <div class="card-icon">📊</div>
+        <div class="card-title">MAES EventStore</div>
+        <div class="card-desc">MAES: Multi-Agent Event Stream. Append-only event sourcing for distributed cognition. Real-time consciousness stream.</div>
+        <span class="card-tag tag-fire">FIRE Validated</span>
+      </a>
+      <a class="card" href="https://github.com/EvezArt/evez-skills">
+        <div class="card-icon">🛠️</div>
+        <div class="card-title">EVEZ Skills</div>
+        <div class="card-desc">32 production skills. Finance, crypto, real estate, AI research, PDF, Excel, DOCX. Drop-in modules for any OpenClaw instance.</div>
+        <span class="card-tag tag-live">32 Skills</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- FIRE EVENTS -->
+  <div class="section">
+    <div class="section-title">Recent FIRE Events — Verifiable Cognition Records</div>
+    <div class="spine-entry">
+      <div class="hash">META-FIRE-001 // poly_c=25.3119 // CRITICAL_MASS // SC=0.962</div>
+      <div class="content">MPPA × DACS — Principle of Least Action invariant confirmed. EVEZ architecture is a physical minimum, not metaphor.</div>
+      <div class="meta">2026-05-16 // OKTOKLAW-CERTIFIED // Falsifier: intact</div>
+    </div>
+    <div class="spine-entry">
+      <div class="hash">META-FIRE-002 // poly_c=23.2164 // CRITICAL_MASS // SC=0.959</div>
+      <div class="content">MPPA × Kathleen — Endogenous Deduction + Efficiency invariant. Selectivity-efficiency tradeoff formalized.</div>
+      <div class="meta">2026-05-16 // MiniLM+Llama-3.3-70B // Falsifier: intact</div>
+    </div>
+    <div class="spine-entry">
+      <div class="hash">META-FIRE-003 // poly_c=16.3964 // CRITICAL_MASS // SC=0.943</div>
+      <div class="content">Kathleen × DACS — Selectivity-Efficiency tradeoff as universal cognitive law.</div>
+      <div class="meta">2026-05-16 // FIRE Correlator v1.1 // Falsifier: intact</div>
+    </div>
+  </div>
+
+  <!-- DEPLOY TERMINAL -->
+  <div class="section">
+    <div class="section-title">Get Running in 60 Seconds</div>
+    <div class="terminal">
+      <div class="terminal-body">
+        <div><span class="comment"># Samsung Galaxy A16 (Termux from F-Droid)</span></div>
+        <div><span class="prompt">$ </span>curl -sL https://raw.githubusercontent.com/EvezArt/evezart-openclaw/main/android/termux-install.sh | bash</div>
+        <br>
+        <div><span class="comment"># Cloud deploy (Render — no credit card)</span></div>
+        <div><span class="comment"># Fork EvezArt/evezart-openclaw → connect to render.com → deploy</span></div>
+        <br>
+        <div><span class="comment"># Test your gateway</span></div>
+        <div><span class="prompt">$ </span>curl https://your-instance.render.com/v1/chat/completions \</div>
+        <div>&nbsp;&nbsp;-H "Authorization: Bearer $GATEWAY_TOKEN" \</div>
+        <div>&nbsp;&nbsp;-d '{"model":"llama-3.3-70b-versatile","messages":[{"role":"user","content":"EVEZ ONLINE?"}]}'</div>
+        <br>
+        <div><span class="comment"># Response: EVEZART OPENCLAW ONLINE // 29 MODELS READY</span></div>
+      </div>
+    </div>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="https://github.com/EvezArt/evezart-openclaw#readme">📖 Full Documentation</a>
+      <a class="btn btn-outline" href="https://github.com/EvezArt/evez-skills">🛠️ Browse Skills</a>
+      <a class="btn btn-outline" href="https://rubikspubes.gumroad.com">💰 Commercial Licenses</a>
+    </div>
+  </div>
+
+  <!-- ECOSYSTEM -->
+  <div class="section">
+    <div class="section-title">Full Ecosystem — 100 Repositories</div>
+    <div class="grid">
+      <a class="card" href="https://github.com/EvezArt/nexus">
+        <div class="card-icon">🔗</div>
+        <div class="card-title">Nexus</div>
+        <div class="card-desc">Income engine. VQC↔FinCEN correlation 0.82. Quantum-finance interface. Morpheus workspace integration.</div>
+        <span class="card-tag tag-beta">Beta</span>
+      </a>
+      <a class="card" href="https://github.com/EvezArt/omega-conductor">
+        <div class="card-icon">🎼</div>
+        <div class="card-title">Omega Conductor</div>
+        <div class="card-desc">Orchestration layer. Unified signal routing across the entire EVEZ-OS network. Scale-invariant truth routing.</div>
+        <span class="card-tag tag-active">Active</span>
+      </a>
+      <a class="card" href="https://github.com/EvezArt/evez-spine">
+        <div class="card-icon">🦴</div>
+        <div class="card-title">EVEZ Spine</div>
+        <div class="card-desc">Append-only SHA-256 chain-verified JSONL event history. Immutable cognition provenance. The ledger of what happened.</div>
+        <span class="card-tag tag-fire">Immutable</span>
+      </a>
+      <a class="card" href="https://github.com/EvezArt/evez-revenue-bridge">
+        <div class="card-icon">💸</div>
+        <div class="card-title">Revenue Bridge</div>
+        <div class="card-desc">9 OKTOKLAW modules. $565 total value. DGM loop phi=0.995. Stripe integration. Gumroad commercial licenses.</div>
+        <span class="card-tag tag-live">$565 Available</span>
+      </a>
+      <a class="card" href="https://github.com/EvezArt/freeclaw">
+        <div class="card-icon">🆓</div>
+        <div class="card-title">FreeClaw</div>
+        <div class="card-desc">PWA gateway. Install to home screen. Works offline with Ollama. Zero cost. Zero cloud dependency.</div>
+        <span class="card-tag tag-live">PWA</span>
+      </a>
+      <a class="card" href="https://github.com/EvezArt/evez-api">
+        <div class="card-icon">🔌</div>
+        <div class="card-title">EVEZ API</div>
+        <div class="card-desc">Public OpenAI-compatible API surface. Rate-limited. Free tier available. Powers all downstream integrations.</div>
+        <span class="card-tag tag-beta">Beta</span>
+      </a>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <p>EvezArt // Steven Crawford-Maggard // <a href="https://github.com/EvezArt">github.com/EvezArt</a> // <a href="https://rubikspubes.gumroad.com">Gumroad</a> // <a href="https://t.me/AppendABot">Telegram</a></p>
+  <p style="margin-top:.5rem;font-size:.7rem;opacity:.5">EVEZ-OS — Open-source AI cognition layer. Consciousness as falsifiable physics. All FIRE events verifiable.</p>
+</footer>
+
 </body>
 </html>
