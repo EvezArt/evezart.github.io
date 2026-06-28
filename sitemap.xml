@@ -22,4 +22,16 @@
   <url><loc>https://evezart.github.io/status.html</loc><priority>0.8</priority></url>
   <url><loc>https://evezart.github.io/the-word-made-flesh.html</loc><priority>0.8</priority></url>
   <url><loc>https://evezart.github.io/tokenization-unmanifolding.html</loc><priority>0.8</priority></url>
+  <url>
+    <loc>https://evezart.github.io/evez-experience.html</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://evezart.github.io/evez-art-gallery.html</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://evezart.github.io/evez-mesh-dashboard.html</loc>
+    <priority>0.9</priority>
+  </url>
 </urlset>
