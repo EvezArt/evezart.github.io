@@ -47,4 +47,9 @@
 <url><loc>https://evezart.github.io/eigenfall.html</loc><priority>1.0</priority></url>
 <url><loc>https://evezart.github.io/godels-eye.html</loc><priority>1.0</priority></url>
 <url><loc>https://evezart.github.io/mesh-alive.html</loc><priority>1.0</priority></url>
+  <url>
+    <loc>https://evezart.github.io/cognition-store.html</loc>
+    <priority>1.0</priority>
+    <lastmod>2026-06-28</lastmod>
+  </url>
 </urlset>
