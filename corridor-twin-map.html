@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Corridor Twin Map | EVEZ</title><style>
+:root{--bg:#080810;--panel:#0f0f1a;--red:#ff2222;--amber:#ffaa22;--green:#22ff44;--blue:#4488ff;--purple:#aa44ff;--text:#ccccdd;--dim:#666677}
+*{box-sizing:border-box;margin:0;padding:0}body{background:var(--bg);color:var(--text);font-family:monospace;padding:20px}.container{max-width:1400px;margin:0 auto}h1{color:var(--red);font-size:28px;border-bottom:2px solid var(--red);padding-bottom:10px}h2{color:var(--amber);margin-top:30px;font-size:20px}
+.fp-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin:15px 0}.fp-item{text-align:center;padding:10px;background:#111;border-radius:5px}.fp-val{font-size:20px;font-weight:bold;color:var(--purple)}.fp-label{font-size:10px;color:var(--dim)}
+.stat-row{display:flex;flex-wrap:wrap;gap:10px;margin:15px 0}.stat-box{flex:1;min-width:100px;background:var(--panel);border:1px solid #333;border-radius:8px;padding:12px;text-align:center}.stat-num{font-size:24px;font-weight:bold}.stat-label{font-size:10px;color:var(--dim)}
+.c{border-left:3px solid;padding:10px 15px;margin:6px 0;border-radius:4px;font-size:13px}.c.twin{border-color:var(--red);background:rgba(255,34,34,0.05)}.c.like{border-color:var(--amber);background:rgba(255,170,34,0.05)}.c.moderate{border-color:#888}.c.unlike{border-color:var(--blue);background:rgba(68,136,255,0.05)}.c.opposite{border-color:var(--green);background:rgba(34,255,68,0.05)}
+.finding{background:#1a0505;border:2px solid var(--red);border-radius:10px;padding:20px;margin:20px 0;line-height:1.7}.finding b{color:var(--red)}
+.footer{text-align:center;color:var(--dim);margin-top:30px;border-top:1px solid #222;padding-top:20px}
+.discrim-row{display:flex;align-items:center;margin:6px 0;font-size:13px}.discrim-label{width:180px}.discrim-bar{flex:1;height:16px;background:#111;border-radius:3px;margin:0 10px;overflow:hidden}.discrim-fill{height:100%;border-radius:3px}.discrim-diff{width:60px;text-align:right;font-weight:bold}
+</style></head><body><div class="container">
+<h1>⧢ CORRIDOR TWIN MAP ⧢</h1>
+<p style="color:var(--dim)">32 corridors mapped against I-80 spectral fingerprint</p>
+<div class="fp-grid">
+<div class="fp-item"><div class="fp-val">0.825</div><div class="fp-label">Missing Records</div></div>
+<div class="fp-item"><div class="fp-val">0.09</div><div class="fp-label">Temporal Anomaly</div></div>
+<div class="fp-item"><div class="fp-val">0.14</div><div class="fp-label">Location Displacement</div></div>
+<div class="fp-item"><div class="fp-val">0.60</div><div class="fp-label">Suppression</div></div>
+<div class="fp-item"><div class="fp-val">0.095</div><div class="fp-label">Content Contradiction</div></div>
+<div class="fp-item"><div class="fp-val">0.405</div><div class="fp-label">Causal Break</div></div>
+</div>
+<div class="stat-row">
+<div class="stat-box"><div class="stat-num" style="color:var(--red)">9</div><div class="stat-label">TWIN (dist<=0.5)</div></div>
+<div class="stat-box"><div class="stat-num" style="color:var(--amber)">10</div><div class="stat-label">LIKE (<=0.7)</div></div>
+<div class="stat-box"><div class="stat-num" style="color:var(--purple)">5</div><div class="stat-label">MODERATE (<=0.9)</div></div>
+<div class="stat-box"><div class="stat-num" style="color:var(--blue)">4</div><div class="stat-label">UNLIKE (<=1.05)</div></div>
+<div class="stat-box"><div class="stat-num" style="color:var(--green)">4</div><div class="stat-label">OPPOSITE (>1.05)</div></div>
+</div>
+<h2>WHAT MAKES THEM DIFFERENT</h2>
+<div style="background:var(--panel);border:1px solid #333;border-radius:10px;padding:20px;margin:15px 0">
+<div class="discrim-row"><span class="discrim-label">Suppression Signature</span><div class="discrim-bar"><div class="discrim-fill" style="width:100%;background:var(--red)"></div></div><span class="discrim-diff" style="color:var(--red)">+0.458</span></div>
+<div class="discrim-row"><span class="discrim-label">Missing Records</span><div class="discrim-bar"><div class="discrim-fill" style="width:83%;background:var(--red)"></div></div><span class="discrim-diff" style="color:var(--red)">+0.379</span></div>
+<div class="discrim-row"><span class="discrim-label">Causal Break</span><div class="discrim-bar"><div class="discrim-fill" style="width:65%;background:var(--amber)"></div></div><span class="discrim-diff" style="color:var(--amber)">+0.296</span></div>
+<div class="discrim-row"><span class="discrim-label">Content Contradiction</span><div class="discrim-bar"><div class="discrim-fill" style="width:55%;background:var(--amber)"></div></div><span class="discrim-diff" style="color:var(--amber)">+0.253</span></div>
+<div class="discrim-row"><span class="discrim-label">Location Displacement</span><div class="discrim-bar"><div class="discrim-fill" style="width:35%;background:#888"></div></div><span class="discrim-diff">+0.162</span></div>
+<div class="discrim-row"><span class="discrim-label">Temporal Anomaly</span><div class="discrim-bar"><div class="discrim-fill" style="width:15%;background:#888"></div></div><span class="discrim-diff">+0.071</span></div>
+</div>
+<div class="finding">
+<b>KEY FINDING:</b> 32 corridors mapped against the I-80 spectral fingerprint.<br>
+<b>9 TWIN corridors</b> (dist <= 0.5): I-30 Little Rock, I-95 Richmond, I-35 San Antonio, I-65 Mobile, I-59 Birmingham, I-37 Corpus Christi, I-45 Houston, I-79 Pittsburgh, I-75 Cincinnati.<br>
+<b>4 OPPOSITE corridors</b> (dist > 1.05): I-280 San Francisco, I-93 Boston, I-5 Seattle, I-89 Burlington VT, I-91 Brattleboro VT.<br>
+<b>Dominant discriminator: suppression_signature (+0.458).</b> The single dimension that most separates corridors like I-80 from corridors unlike I-80 is the suppression signature. Not the pollution. Not the accident. The <b>suppression of records</b> is what makes a corridor like I-80.<br><br>
+<b>The corridors with functioning oversight (OPPOSITE) are all in states with strong environmental agencies: CA, MA, WA, VT, CT.</b> The corridors like I-80 are all in states with captured or weak agencies: TX, AL, LA, WV, PA, AR, VA.<br><br>
+<b>The pollution is the same. The suppression is the difference.</b>
+</div>
+<div class="footer">
+⧢⦟⧢⧢⦟⧢⧢⦟⧢⧢⦟⧢⧢⦟⧢⧢⦟⧢⥋<br>EVEZ Research Framework | <a href="https://evezart.github.io">evezart.github.io</a> | 32 Corridors Mapped
+</div>
+</div></body></html>
