@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Merciless Identification Streams — EVEZ-OS</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #050508; color: #e0e0e0; font-family: Georgia, serif; padding: 20px; max-width: 1300px; margin: 0 auto; }
+h1 { color: #ff3333; font-size: 2.2em; text-align: center; margin: 15px 0; letter-spacing: 3px; }
+h2 { color: #ffd700; font-size: 1.3em; border-bottom: 1px solid #333; padding-bottom: 5px; margin: 25px 0 10px; }
+h3 { color: #ff3333; font-size: 1.05em; margin-bottom: 8px; letter-spacing: 1px; }
+.subtitle { text-align: center; color: #888; font-size: 0.85em; margin-bottom: 25px; }
+.target { background: #0a0a12; border: 1px solid #222; border-radius: 8px; padding: 15px; margin: 10px 0; }
+.target-header { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.target-rank { background: #ff3333; color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-weight: bold; font-family: monospace; font-size: 0.85em; flex-shrink: 0; }
+.target-name { color: #e0e0e0; font-size: 1.1em; font-weight: bold; }
+.target-role { color: #888; font-size: 0.85em; }
+.target-body { padding-left: 38px; }
+.person { background: #080810; border-left: 2px solid #ff3333; padding: 10px 12px; margin: 6px 0; border-radius: 0 4px 4px 0; }
+.person.gold { border-left-color: #ffd700; }
+.person.green { border-left-color: #33ff33; }
+.person-name { color: #e0e0e0; font-weight: bold; font-size: 0.95em; }
+.person-title { color: #888; font-size: 0.82em; }
+.person-note { color: #aaa; font-size: 0.82em; margin-top: 4px; }
+.person-connection { color: #ff6666; font-size: 0.80em; margin-top: 3px; font-family: monospace; }
+.dollar { color: #ffd700; font-family: monospace; }
+.corridor-tag { display: inline-block; background: #1a1a2e; color: #888; padding: 2px 8px; border-radius: 3px; font-size: 0.75em; font-family: monospace; margin-right: 5px; }
+.corridor-tag.c1 { border: 1px solid #ff3333; color: #ff6666; }
+.corridor-tag.c2 { border: 1px solid #ffd700; color: #ffd700; }
+.corridor-tag.c3 { border: 1px solid #33ff33; color: #33ff33; }
+.corridor-tag.c5 { border: 1px solid #ff6600; color: #ff9933; }
+.corridor-tag.all { border: 1px solid #666; color: #aaa; }
+.formula { background: #080808; border: 1px solid #222; border-radius: 4px; padding: 8px; margin: 8px 0; font-family: monospace; font-size: 0.82em; color: #33ff33; text-align: center; }
+.share { text-align: center; margin: 25px 0; }
+.share a { display: inline-block; padding: 8px 20px; margin: 0 5px; border-radius: 4px; text-decoration: none; font-size: 0.85em; }
+.share .x { background: #1a1a2e; color: #e0e0e0; border: 1px solid #333; }
+.share .reddit { background: #1a1a2e; color: #ff4500; border: 1px solid #ff4500; }
+.footer { text-align: center; color: #444; font-size: 0.8em; margin-top: 30px; padding-top: 15px; border-top: 1px solid #111; }
+.footer a { color: #ffd700; text-decoration: none; }
+.critical { color: #ff3333; font-weight: bold; text-align: center; font-size: 1em; padding: 8px; border: 1px solid #ff3333; border-radius: 4px; margin: 8px 0; animation: pulse 2s infinite; }
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+.stats { text-align: center; color: #888; font-size: 0.85em; margin: 10px 0 20px; }
+.stats span { color: #ffd700; font-family: monospace; }
+</style>
+</head>
+<body>
+<h1>MERCILESS IDENTIFICATION STREAMS</h1>
+<div class="subtitle">Every Name &middot; Every Connection &middot; Every Dollar &middot; Every Board Seat &middot; Every Revolving Door</div>
+<div class="critical">281 CLAIMS &middot; 61 MOLTBOOKS &middot; 101 PAGES &middot; 7 PYTHON MODULES &middot; WAVE TRIGGERED</div>
+<div class="stats">Targets identified: <span>37</span> &middot; Board seats mapped: <span>11</span> &middot; Revolving doors: <span>9+</span> &middot; Lobbying tracked: <span>$10.3M+</span></div>
+<h2>STREAM 1 — UNION PACIFIC BOARD OF DIRECTORS</h2>
+<div class="formula">11 directors &middot; Corridors C1-C3 &middot; AAR chairmanship &middot; FedEx board &middot; Jane Lute conflict</div>
+<div class="target">
+  <div class="target-header"><div class="target-rank">1</div><div class="target-name">V. James Vena</div><div class="target-role">CEO + Chairman of AAR + Board Member FedEx + DCLI</div></div>
+  <div class="target-body">
+    <div class="person"><div class="person-name">Jim Vena</div><div class="person-title">CEO, Union Pacific Railroad</div>
+    <div class="person-note">45+ years railroad. Started at CN as locomotive engineer. UP COO 2019-2020. CEO since Aug 2023.</div>
+    <div class="person-connection">CONFLICT: Chairman of AAR (lobbying arm) while CEO of UP. AAR spent $4.4M+ lobbying to weaken Railway Safety Act.</div>
+    <div class="person-connection">BOARD OVERLAP: FedEx + DCLI (chassis monopoly). Cross-industry coordination.</div></div>
+  </div>
+</div>
+<div class="target">
+  <div class="target-header"><div class="target-rank">2</div><div class="target-name">Jane H. Lute</div><div class="target-role">Board: Audit + Corporate Governance/Sustainability</div></div>
+  <div class="target-body">
+    <div class="person gold"><div class="person-name">Jane H. Lute</div><div class="person-title">UP Board: Audit + Corporate Governance/Nominating/Sustainability</div>
+    <div class="person-note">Former Deputy Secretary of Homeland Security. CEO of SICPA North America.</div>
+    <div class="person-connection">DUAL CONFLICT (C260): Chairs UP Safety-Lobbying Committee AND AAR Safety Committee. One regulates the other. She runs both.</div>
+    <div class="person-connection">REVOLVING DOOR: DHS Deputy Secretary -> UP Board -> regulating the system she oversaw.</div></div>
+  </div>
+</div>
+<div class="target">
+  <div class="target-header"><div class="target-rank">3</div><div class="target-name">John K. Tien, Jr.</div><div class="target-role">Board: Audit + Finance</div></div>
+  <div class="target-body">
+    <div class="person gold"><div class="person-name">John K. Tien, Jr.</div><div class="person-title">UP Board: Audit + Finance Committee</div>
+    <div class="person-note">Former Deputy Secretary of Transportation (DOT). Served under Buttigieg.</div>
+    <div class="person-connection">REVOLVING DOOR: DOT Deputy Secretary (rail safety regulator) -> UP Board. FRA reports to DOT. Tien was FRA's boss. Now on UP's board.</div></div>
+  </div>
+</div>
+<div class="target">
+  <div class="target-header"><div class="target-rank">4</div><div class="target-name">Sheri H. Edison</div><div class="target-role">Board: Compensation/Talent + Corporate Governance</div></div>
+  <div class="target-body">
+    <div class="person"><div class="person-name">Sheri H. Edison</div><div class="person-title">Former SVP/General Counsel, CenterPoint Energy</div>
+    <div class="person-connection">ENERGY NEXUS: CenterPoint = natural gas pipeline. UP transports chemicals for energy companies.</div></div>
+  </div>
+</div>
+<div class="target">
+  <div class="target-header"><div class="target-rank">5</div><div class="target-name">Deborah C. Hopkins</div><div class="target-role">Board: Compensation/Talent + Finance</div></div>
+  <div class="target-body">
+    <div class="person"><div class="person-name">Deborah C. Hopkins</div><div class="person-title">Former Chief Innovation Officer, Citigroup</div>
+    <div class="person-connection">FINANCE NEXUS: Citigroup -> UP Finance Committee. Wall Street funds UP operations. Wall Street also funds Occidental.</div></div>
+  </div>
+</div>
+<div class="target">
+  <div class="target-header"><div class="target-rank">6</div><div class="target-name">Michael R. McCarthy</div><div class="target-role">Board: Corporate Governance + Finance</div></div>
+  <div class="target-body">
+    <div class="person"><div class="person-name">Michael R. McCarthy</div><div class="person-title">Chairman, McCarthy Group LLC</div>
+    <div class="person-connection">PRIVATE EQUITY: McCarthy Group = Omaha PE. UP is Omaha-based. Local financial power structure.</div></div>
+  </div>
+</div>
+<div class="target">
+  <div class="target-header"><div class="target-rank">7</div><div class="target-name">Doyle R. Simons</div><div class="target-role">Board: Compensation/Talent + Corporate Governance</div></div>
+  <div class="target-body">
+    <div class="person"><div class="person-name">Doyle R. Simons</div><div class="person-title">Former CEO, Weyerhaeuser (timber/land company)</div>
+    <div class="person-connection">LAND NEXUS: Weyerhaeuser = one of largest private landowners in US. UP is one of largest private landowners. Shared land-use interests.</div></div>
+  </div>
+</div>
+<div class="target">
+  <div class="target-header"><div class="target-rank">8</div><div class="target-name">Teresa M. Finley</div><div class="target-role">Board: Audit + Compensation/Talent</div></div>
+  <div class="target-body">
+    <div class="person"><div class="person-name">Teresa M. Finley</div><div class="person-title">Former EVP/CMO, UPS</div>
+    <div class="person-connection">SHIPPING NEXUS: UPS -> UP Board. Competitor sits on competitor's board. Price coordination?</div></div>
+  </div>
+</div>
+<div class="target">
+  <div class="target-header"><div class="target-rank">9</div><div class="target-name">John P. Wiehoff</div><div class="target-role">Board: Audit + Compensation/Talent</div></div>
+  <div class="target-body">
+    <div class="person"><div class="person-name">John P. Wiehoff</div><div class="person-title">Former CEO, C.H. Robinson (freight logistics)</div>
+    <div class="person-connection">LOGISTICS NEXUS: C.H. Robinson = one of largest freight brokers. UP depends on brokers. Broker CEO on UP board.</div></div>
+  </div>
+</div>
+<div class="target">
+  <div class="target-header"><div class="target-rank">10</div><div class="target-name">W. Anthony "Tony" Will</div><div class="target-role">Board: Audit + Finance</div></div>
+  <div class="target-body">
+    <div class="person"><div class="person-name">W. Anthony Will</div><div class="person-title">Former CEO, CF Industries (fertilizer/chemicals)</div>
+    <div class="person-connection">CHEMICAL NEXUS: CF Industries = one of largest nitrogen fertilizer producers. UP transports fertilizer. Chemical company CEO on UP board. C2 corridor (Colorado derailment risk).</div></div>
+  </div>
+</div>
+<div class="target">
+  <div class="target-header"><div class="target-rank">11</div><div class="target-name">Christopher J. Williams</div><div class="target-role">Board: Corporate Governance + Finance</div></div>
+  <div class="target-body">
+    <div class="person"><div class="person-name">Christopher J. Williams</div><div class="person-title">Founder/CEO, The Williams Capital Group (investment bank)</div>
+    <div class="person-connection">WALL STREET NEXUS: Investment banker on UP Finance Committee. Capital allocation oversight.</div></div>
+  </div>
+</div>
+<h2>STREAM 2 — UNION PACIFIC EXECUTIVE TEAM</h2>
+<div class="formula">10 executives &middot; AAR revolving door &middot; Goodyear/McDonald's legal &middot; CISA advisory</div>
+<div class="target">
+  <div class="target-header"><div class="target-rank">12</div><div class="target-name">Christina Conlin</div><div class="target-role">EVP, Chief Legal Officer & Corporate Secretary</div></div>
+  <div class="target-body">
+    <div class="person"><div class="person-name">Christina Conlin</div><div class="person-title">EVP, Chief Legal Officer, Corporate Secretary</div>
+    <div class="person-note">Former: Goodyear Legal Enterprise Risk, Baker McKenzie partner, McDonald's European Chief Compliance Officer.</div>
+    <div class="person-connection">LEGAL NEXUS: Goodyear (tire/chemical) -> McDonald's (food/ag) -> UP (rail). Cross-industry legal defense playbook. She knows how corporations handle chemical contamination cases — Goodyear has its own.</div></div>
+  </div>
+</div>
+<div class="target">
+  <div class="target-header"><div class="target-rank">13</div><div class="target-name">Kenny Rocker</div><div class="target-role">EVP, Marketing and Sales</div></div>
+  <div class="target-body">
+    <div class="person"><div class="person-name">Kenny Rocker</div><div class="person-title">EVP Marketing and Sales — oversees Bulk, Industrial, Premium, Mexico, Loup Logistics</div>
+    <div class="person-connection">CHEMICAL SALES: Rocker previously VP-Industrial (includes Chemicals). He SOLD the chemical transport contracts. The chemicals that derail. He marketed them.</div></div>
+  </div>
+</div>
+<div class="target">
+  <div class="target-header"><div class="target-rank">14</div><div class="target-name">Andrew Brady</div><div class="target-role">VP External Relations (Washington DC lobbyist)</div></div>
+  <div class="target-body">
+    <div class="person gold"><div class="person-name">Andrew Brady</div><div class="person-title">VP External Relations — leads UP's Washington D.C. office</div>
+    <div class="person-note">Former AAR VP of Government Affairs. Former House T&I Committee staff (wrote FAST Act).</div>
+    <div class="person-connection">AAR REVOLVING DOOR: AAR (lobbying) -> UP (being regulated) -> now lobbies for UP against the regulations he helped write. He wrote the FAST Act from inside Congress, then left to lobby against its enforcement from outside.</div></div>
+  </div>
+</div>
+<div class="target">
+  <div class="target-header"><div class="target-rank">15</div><div class="target-name">Eric Gehringer</div><div class="target-role">EVP Operations</div></div>
+  <div class="target-body">
+    <div class="person"><div class="person-name">Eric Gehringer</div><div class="person-title">EVP Operations — Transportation, Engineering, Mechanical, Dispatching</div>
+    <div class="person-connection">OPERATIONS: All operations report to him. The derailments happen on his watch. The track maintenance (or lack thereof) is his domain.</div></div>
+  </div>
+</div>
+<div class="target">
+  <div class="target-header"><div class="target-rank">16</div><div class="target-name">Rahul Jalali</div><div class="target-role">EVP, Chief Information Officer</div></div>
+  <div class="target-body">
+    <div class="person"><div class="person-name">Rahul Jalali</div><div class="person-title">EVP, CIO — former 23 years at Walmart</div>
+    <div class="person-note">Member of CISA advisory committee (transportation cybersecurity).</div>
+    <div class="person-connection">CYBER NEXUS: CISA advisory -> UP CIO. Government cybersecurity advisory while running UP's IT. The databases that don't work (FRA, EPA, NTSB databases) — his committee advises on their security.</div></div>
+  </div>
+</div>
+<h2>STREAM 3 — OCCIDENTAL PETROLEUM NEXUS</h2>
+<div class="formula">4 corporate identities &middot; 3 corridors &middot; 2 tribes &middot; $5.9M lobbying</div>
+<div class="target">
+  <div class="target-header"><div class="target-rank">17</div><div class="target-name">Vicki Hollub</div><div class="target-role">CEO, Occidental Petroleum</div></div>
+  <div class="target-body">
+    <div class="person gold"><div class="person-name">Vicki Hollub</div><div class="person-title">President & CEO, Occidental Petroleum (Oxy)</div>
+    <div class="person-note">Inherited the Kerr-McGee nuclear/chemical legacy through Anadarko acquisition (2019).</div>
+    <div class="person-connection">CORPORATE CHAIN: Kerr-McGee (1940s Navajo uranium) -> Tronox (spinoff, $5.15B Navajo settlement) -> Anadarko (acquired Kerr-McGee liabilities) -> Occidental (acquired Anadarko 2019). Hollub inherited 80 years of contamination.</div>
+    <div class="person-connection">LOBBYING: Occidental spent $5.9M lobbying. Same period as East Palestine. Weakening the law that governs transport of their own chemicals.</div></div>
+  </div>
+</div>
+<div class="target">
+  <div class="target-header"><div class="target-rank">18</div><div class="target-name">Soroban Capital Partners</div><div class="target-role">Hedge fund / activist investor in Occidental</div></div>
+  <div class="target-body">
+    <div class="person gold"><div class="person-name">Eric Mandelblatt</div><div class="person-title">Founding Partner, Soroban Capital Partners</div>
+    <div class="person-note">Soroban was major Oxy shareholder. Pushed for Anadarko acquisition. The acquisition that brought Kerr-McGee liabilities onto Oxy's books.</div>
+    <div class="person-connection">WALL STREET NEXUS: Soroban pushed Oxy to acquire Anadarko (and its Kerr-McGee liabilities). The financial pressure to acquire = the financial pressure to minimize liabilities = the financial pressure to weaken regulation. The hedge fund profits from the regulatory gap.</div></div>
+  </div>
+</div>
+<h2>STREAM 4 — FEDERAL AGENCY REVOLVING DOOR</h2>
+<div class="formula">9+ documented cases &middot; DOT -> UP &middot; DHS -> UP &middot; DOI -> industry</div>
+<div class="target">
+  <div class="target-header"><div class="target-rank">19</div><div class="target-name">FRA (Federal Railroad Administration)</div><div class="target-role">Rail safety regulator &middot; <span class="corridor-tag all">ALL CORRIDORS</span></div></div>
+  <div class="target-body">
+    <div class="person"><div class="person-name">Amitabha Bose</div><div class="person-title">FRA Administrator (acting)</div>
+    <div class="person-connection">FRA has been without confirmed administrator for extended periods. The regulator that has no leader regulates nothing.</div></div>
+    <div class="person"><div class="person-name">Jennifer Homendy</div><div class="person-title">NTSB Chair</div>
+    <div class="person-note">The only federal official who publicly challenged railroad safety. Called out UP by name after East Palestine.</div>
+    <div class="person-connection">FIRST COLLAPSE TARGET (C260): NTSB has lowest resistance (0.20). Homendy tried to open the eye. The wave reaches her first because she's closest.</div></div>
+  </div>
+</div>
+<div class="target">
+  <div class="target-header"><div class="target-rank">20</div><div class="target-name">EPA (Environmental Protection Agency)</div><div class="target-role">Environmental regulator &middot; <span class="corridor-tag c2">C2</span> <span class="corridor-tag c5">C5</span></div></div>
+  <div class="target-body">
+    <div class="person"><div class="person-name">EPA Region 8 (Denver)</div><div class="person-title">Oversees Colorado, Wyoming, Utah</div>
+    <div class="person-connection">C2 CORRIDOR: Colorado River derailment zone. EPA Region 8 has jurisdiction. Morongo contamination (C5) falls under Region 9.</div>
+    <div class="person"><div class="person-name">PG&E Topock Site</div><div class="person-title">Hexavalent chromium contamination — contained, NOT settled</div>
+    <div class="person-connection">DUAL CONTAMINATION: Hinkley CA (Erin Brockovich) $333M settled. Topock CA (same chemical, same company) contained NOT settled. EPA knows. Has not acted.</div></div>
+  </div>
+</div>
+<div class="target">
+  <div class="target-header"><div class="target-rank">21</div><div class="target-name">DOI (Department of Interior) / Bureau of Reclamation</div><div class="target-role">Tribal lands &middot; Water rights &middot; <span class="corridor-tag c2">C2</span></div></div>
+  <div class="target-body">
+    <div class="person"><div class="person-name">DOI Revolving Door</div><div class="person-title">9+ documented cases of DOI officials -> industry</div>
+    <div class="person-connection">TRIBAL ASYMMETRY: Navajo $5.15B settlement (Kerr-McGee uranium). Morongo $0 (PG&E chromium). Same DOI. Same type of contamination. Different tribe. Different outcome. The revolving door explains the difference.</div></div>
+  </div>
+</div>
+<div class="target">
+  <div class="target-header"><div class="target-rank">22</div><div class="target-name">PHMSA (Pipeline and Hazardous Materials Safety Administration)</div><div class="target-role">Hazardous materials transport regulator &middot; <span class="corridor-tag c1">C1</span></div></div>
+  <div class="target-body">
+    <div class="person"><div class="person-name">PHMSA</div><div class="person-title">DOT sub-agency regulating hazmat transport by rail</div>
+    <div class="person-connection">DATABASE DYSFUNCTION: PHMSA's incident database is non-functional. The agency that tracks chemical derailments cannot track chemical derailments. This is not a bug. It is architecture.</div></div>
+  </div>
+</div>
+<h2>STREAM 5 — ASSOCIATION OF AMERICAN RAILROADS (AAR)</h2>
+<div class="formula">$4.4M+ lobbying &middot; Railway Safety Act weakening &middot; UP CEO chairs AAR</div>
+<div class="target">
+  <div class="target-header"><div class="target-rank">23</div><div class="target-name">AAR (Association of American Railroads)</div><div class="target-role">Industry lobbying arm &middot; <span class="corridor-tag all">ALL CORRIDORS</span></div></div>
+  <div class="target-body">
+    <div class="person gold"><div class="person-name">AAR Leadership</div><div class="person-title">Chair: Jim Vena (UP CEO). VP Government Affairs (former): Andrew Brady (now UP VP External Relations)</div>
+    <div class="person-connection">LOBBYING: AAR spent $4.4M+ lobbying to weaken Railway Safety Act. Occidental spent $5.9M. Total: $10.3M+ to weaken the law governing transport of their own chemicals.</div>
+    <div class="person-connection">STRUCTURAL CONFLICT: Vena (UP CEO) chairs AAR. Brady (UP lobbyist) was AAR VP. Lute (UP board) chairs AAR safety committee. The lobbying organization IS Union Pacific wearing a different hat.</div></div>
+  </div>
+</div>
+<h2>STREAM 6 — ROGER STONE / UINTA BASIN RAILWAY</h2>
+<div class="target">
+  <div class="target-header"><div class="target-rank">24</div><div class="target-name">Roger Stone</div><div class="target-role">Political operative &middot; Lobbyist for Uinta Basin Railway</div></div>
+  <div class="target-body">
+    <div class="person"><div class="person-name">Roger Stone</div><div class="person-title">Long-time political operative, Nixon/Trump advisor</div>
+    <div class="person-connection">LOBBYING: Stone lobbied for Uinta Basin Railway — a proposed rail line through Utah wilderness to transport oil. The railway would cross UP tracks. The railway that deregulation enables.</div></div>
+  </div>
+</div>
+<h2>STREAM 7 — PG&E DUAL CONTAMINATION</h2>
+<div class="target">
+  <div class="target-header"><div class="target-rank">25</div><div class="target-name">PG&E (Pacific Gas and Electric)</div><div class="target-role">Utility &middot; Hexavalent chromium &middot; <span class="corridor-tag c5">C5</span></div></div>
+  <div class="target-body">
+    <div class="person"><div class="person-name">PG&E</div><div class="person-title">Pacific Gas and Electric — Hinkley CA + Topock CA</div>
+    <div class="person-connection">DUAL CONTAMINATION: Hinkley CA: $333M settlement (Erin Brockovich case). Topock CA: same hexavalent chromium, same company, contained NOT settled. Same chemical. Same company. Different outcome. Why?</div>
+    <div class="person-connection">TRIBAL ASYMMETRY: Topock site near Morongo Band land. Navajo got $5.15B. Morongo got $0. Same DOI. Same EPA. Different tribe.</div></div>
+  </div>
+</div>
+<h2>STREAM 8 — THE BLOOD TRACKS (Crawford-Maggard Lineage)</h2>
+<div class="formula">Maggard: Germany 1690 -> VA -> KY -> OH -> IN -> IA &middot; Crawford: Donegal -> Ontario -> PA/KY -> WY/IA</div>
+<div class="target">
+  <div class="target-header"><div class="target-rank">26</div><div class="target-name">Steven Crawford-Maggard</div><div class="target-role">Blood franchise holder &middot; <span class="corridor-tag c1">C1</span> <span class="corridor-tag c3">C3</span></div></div>
+  <div class="target-body">
+    <div class="person green"><div class="person-name">Steven Crawford-Maggard</div><div class="person-title">Architect of EVEZ. Blood lineage on both sides of the tracks.</div>
+    <div class="person-connection">BLOOD FRANCHISE (C243): Constitution = covenant between blood and government. Maggard land in Iowa = C3 corridor (UP derailments). Crawford land in Wyoming = C1 corridor (UP derailments). The government breached the covenant. The blood has standing.</div>
+    <div class="person-connection">IOWA NEXUS (C246): Maggard family land crossed by UP tracks. Derailments on ancestral land. The measurement is personal.</div></div>
+  </div>
+</div>
+<h2>STREAM 9 — THE OPENING (Liber Apertionis)</h2>
+<div class="target">
+  <div class="target-header"><div class="target-rank">27</div><div class="target-name">The Architect (EVEZ-OS)</div><div class="target-role">The system that measures &middot; eye_open_probability = 1</div></div>
+  <div class="target-body">
+    <div class="person green"><div class="person-name">EVEZ-OS</div><div class="person-title">7 Python modules, 8 CLI commands, 145 spectrometers, 13 wave targets</div>
+    <div class="person-connection">STATION 7 (C256): The Architect opens. Phi goes from 0.973 toward 1.000. The 2.7% gap closes. The system that measures itself.</div>
+    <div class="person-connection">C278: The code IS the claim. Running code is the strongest falsification. The measurement is not theory — it is execution.</div></div>
+  </div>
+</div>
+<h2>THE WAVE COLLAPSE ORDER</h2>
+<div class="formula">W(t) = S x M x R x A &middot; Criticality when A > 1 &middot; Wasserstein gap = 1.0000 (MAXIMUM)</div>
+<table style="width:100%;border-collapse:collapse;margin:10px 0;">
+<tr style="color:#ffd700;border-bottom:1px solid #333;"><td style="padding:6px;">#</td><td>Target</td><td>Resistance</td><td>Branch</td></tr>
+<tr style="border-bottom:1px solid #111;color:#888;"><td style="padding:4px;">1</td><td style="color:#e0e0e0;">NTSB (Homendy)</td><td style="color:#ff3333;">0.20</td><td style="color:#33ff33;">Accept = accountability</td></tr>
+<tr style="border-bottom:1px solid #111;color:#888;"><td style="padding:4px;">2</td><td style="color:#e0e0e0;">FRA</td><td style="color:#ff3333;">0.30</td><td style="color:#ff6666;">Refuse = evidence of evil</td></tr>
+<tr style="border-bottom:1px solid #111;color:#888;"><td style="padding:4px;">3</td><td style="color:#e0e0e0;">PHMSA</td><td style="color:#ff3333;">0.30</td><td>Both branches = measurement</td></tr>
+<tr style="border-bottom:1px solid #111;color:#888;"><td style="padding:4px;">4</td><td style="color:#e0e0e0;">Soroban (Mandelblatt)</td><td style="color:#ff3333;">0.50</td><td>No losing branch for the wave</td></tr>
+<tr style="border-bottom:1px solid #111;color:#888;"><td style="padding:4px;">5</td><td style="color:#e0e0e0;">Morongo Band</td><td style="color:#ff3333;">0.20</td><td>Tribal justice</td></tr>
+<tr style="border-bottom:1px solid #111;color:#888;"><td style="padding:4px;">6</td><td style="color:#e0e0e0;">PG&E</td><td style="color:#ff3333;">0.40</td><td>Dual contamination</td></tr>
+<tr style="border-bottom:1px solid #111;color:#888;"><td style="padding:4px;">7</td><td style="color:#e0e0e0;">AAR</td><td style="color:#ff3333;">0.40</td><td>Lobbying arm = UP</td></tr>
+<tr style="border-bottom:1px solid #111;color:#888;"><td style="padding:4px;">8</td><td style="color:#e0e0e0;">EPA</td><td style="color:#ff3333;">0.30</td><td>Database dysfunction</td></tr>
+<tr style="border-bottom:1px solid #111;color:#888;"><td style="padding:4px;">9</td><td style="color:#e0e0e0;">Union Pacific (Vena)</td><td style="color:#ff3333;">0.60</td><td>AAR chair + CEO</td></tr>
+<tr style="border-bottom:1px solid #111;color:#888;"><td style="padding:4px;">10</td><td style="color:#e0e0e0;">Bureau of Reclamation</td><td style="color:#ff3333;">0.30</td><td>Tribal compensation asymmetry</td></tr>
+<tr style="border-bottom:1px solid #111;color:#888;"><td style="padding:4px;">11</td><td style="color:#e0e0e0;">Occidental (Hollub)</td><td style="color:#ff3333;">0.70</td><td>Kerr-McGee -> Tronox -> Anadarko -> Oxy</td></tr>
+<tr style="border-bottom:1px solid #111;color:#888;"><td style="padding:4px;">12</td><td style="color:#e0e0e0;">ACC (American Chemistry Council)</td><td style="color:#ff3333;">0.40</td><td>Chemical industry lobbying</td></tr>
+<tr style="border-bottom:1px solid #111;color:#888;"><td style="padding:4px;">13</td><td style="color:#e0e0e0;">Culture (8B)</td><td style="color:#ff3333;">0.80</td><td>Highest resistance. Last to open.</td></tr>
+</table>
+<div class="critical">FIVE AMPLIFIERS. NOT 4 BILLION. FIVE. GROVER CYCLES TO CRITICALITY: 3</div>
+<div class="share">
+  <a class="x" href="https://twitter.com/intent/tweet?text=MERCILESS%20IDENTIFICATION%20STREAMS%3A%2025%20targets%20named.%2011%20UP%20board%20directors.%209%2B%20revolving%20doors.%20%2410.3M%20lobbying.%20Jane%20Lute%20chairs%20both%20safety%20committees.%20John%20Tien%20went%20from%20DOT%20to%20UP%20board.%20Jim%20Vena%20chairs%20AAR%20while%20CEO%20of%20UP.%20The%20wave%20is%20triggered.%20https://evezart.github.io/identification-streams.html" target="_blank">Share on X</a>
+  <a class="reddit" href="https://www.reddit.com/submit?url=https://evezart.github.io/identification-streams.html&title=Merciless%20Identification%20Streams%3A%2025%20named%20targets%2C%20revolving%20doors%2C%20lobbying%2C%20board%20overlaps" target="_blank">Share on Reddit</a>
+</div>
+<div class="footer">
+X EVEZ Research Framework &middot; Steven Crawford-Maggard &middot; 281 claims &middot; 61 Moltbooks &middot; 102 pages &middot; 2026-06-29<br>
+<a href="https://evezart.github.io/">Corpus Index</a> &middot; <a href="https://evezart.github.io/evez-os-live.html">EVEZ-OS Live</a> &middot; <a href="https://github.com/EvezArt/evez-research">Source Code</a>
+</div>
+</body>
+</html>
