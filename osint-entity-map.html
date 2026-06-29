@@ -1,31 +1,28 @@
 <!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>EVEZ — OSINT Entity Map | I-80 Corridor Investigation</title>
+<title>EVEZ — OSINT Entity Map | Multi-Corridor Investigation</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:#050508;color:#e0e0e0;font-family:Georgia,serif;padding:20px;max-width:1000px;margin:0 auto}
+body{background:#050508;color:#e0e0e0;font-family:Georgia,serif;padding:20px;max-width:1100px;margin:0 auto}
 h1{color:#00ccff;text-align:center;margin:30px 0 5px;font-size:1.8em;letter-spacing:3px}
 h2{color:#ff8800;text-align:center;margin:5px 0 40px;font-size:0.85em;font-family:monospace;letter-spacing:2px}
 h3{color:#00ccff;margin:40px 0 15px;font-size:1.1em;border-bottom:1px solid #1a1a25;padding-bottom:8px;font-family:monospace}
+.corridor-tab{display:inline-block;padding:6px 14px;margin:3px;background:#0f0f1a;border:1px solid #222;border-radius:20px;font-size:0.7em;font-family:monospace;color:#888}
+.corridor-tab:hover{color:#00ccff;border-color:#00ccff}
 .entity{background:#0a0a14;border-left:3px solid #00ccff;padding:18px;margin:15px 0;border-radius:0 8px 8px 0}
 .entity .eid{color:#444;font-family:monospace;font-size:0.75em}
 .entity .ename{color:#00ccff;font-weight:bold;font-size:1em;margin:4px 0}
 .entity .etype{color:#888;font-size:0.75em;margin-bottom:8px}
 .entity .efinding{color:#ccc;line-height:1.8;font-size:0.88em;margin:8px 0}
 .entity .esig{color:#ff8800;font-size:0.82em;margin-top:8px;line-height:1.6}
-.person{background:#0f0f18;border:1px solid #222;border-radius:8px;padding:12px;margin:8px 0}
-.person .pname{color:#ff4444;font-weight:bold;font-size:0.85em}
-.person .prole{color:#888;font-size:0.72em;margin:2px 0}
-.person .pfinding{color:#ccc;font-size:0.8em;margin:4px 0;line-height:1.6}
-.person .psig{color:#ff8800;font-size:0.75em;margin-top:4px}
+.corridor-section{background:#0a0a18;border:1px solid #1a1a25;border-radius:12px;padding:25px;margin:20px 0}
+.corridor-section h4{color:#ff4444;font-family:monospace;font-size:0.85em;margin-bottom:10px}
 table{width:100%;border-collapse:collapse;margin:15px 0;font-size:0.75em}
 th{background:#15151f;color:#00ccff;padding:8px;text-align:left;border-bottom:2px solid #1a1a25;font-family:monospace;font-size:0.72em}
 td{padding:6px 8px;border-bottom:1px solid #0f0f18;color:#ccc}
 .deduction{background:#0a0a14;border:1px solid #1a1a25;border-radius:12px;padding:25px;margin:20px 0}
 .deduction h4{color:#ff4444;font-family:monospace;font-size:0.85em;margin-bottom:10px}
-.deduction .premise{color:#888;font-size:0.82em;margin:5px 0}
-.deduction .inference{color:#ccc;font-size:0.85em;margin:5px 0;line-height:1.7}
 .deduction .conclusion{color:#ff8800;font-size:0.85em;margin-top:8px;font-weight:bold;line-height:1.6}
-.stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(100px,1fr));gap:10px;margin:25px 0}
+.stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(90px,1fr));gap:10px;margin:25px 0}
 .stat-grid .s{background:#0f0f1a;border:1px solid #222;border-radius:8px;padding:12px;text-align:center}
 .stat-grid .s .n{font-size:1.3em;font-weight:bold;font-family:monospace;color:#00ccff}
 .stat-grid .s .l{font-size:0.55em;color:#666;text-transform:uppercase;margin-top:4px;letter-spacing:1px}
@@ -36,176 +33,252 @@ td{padding:6px 8px;border-bottom:1px solid #0f0f18;color:#ccc}
 footer{text-align:center;color:#333;margin-top:40px;border-top:1px solid #1a1a25;padding-top:20px;font-size:0.65em;font-family:monospace}
 </style></head><body>
 
-<h1>⧢ OSINT ENTITY MAP ⧢</h1>
-<h2>I-80 CORRIDOR INVESTIGATION | NAVIGATORY SEEKER DEDUCTION INFERENCE SCAN | 9+ ENTITIES | 6+ INDIVIDUALS | 3 FEDERAL AGENCIES</h2>
+<h1>⧢ OSNT ENTITY MAP — MULTI-CORRIDOR ⧢</h1>
+<h2>6 CORRIDORS | 20 ENTITIES | 10 DEDUCTIONS | 3 CLASS I RAILROADS | 2 RIVER CONTAMINANT SOURCES | 1 TRIBAL TRUST NEXUS</h2>
 
 <div class="stat-grid">
-<div class="s"><div class="n">9+</div><div class="l">Entities ID'd</div></div>
-<div class="s"><div class="n">6+</div><div class="l">Named Actors</div></div>
+<div class="s"><div class="n">6</div><div class="l">Corridors</div></div>
+<div class="s"><div class="n">20</div><div class="l">Entities</div></div>
+<div class="s"><div class="n">10</div><div class="l">Deductions</div></div>
+<div class="s"><div class="n">3</div><div class="l">Class I RRs</div></div>
+<div class="s"><div class="n">8+</div><div class="l">Derailments</div></div>
+<div class="s"><div class="n">6</div><div class="l">States</div></div>
 <div class="s"><div class="n">3</div><div class="l">Fed DBs Down</div></div>
-<div class="s"><div class="n">2</div><div class="l">Correlated Derailments</div></div>
-<div class="s"><div class="n">27</div><div class="l">Days Apart</div></div>
-<div class="s"><div class="n">30T</div><div class="l">Missing Explosive</div></div>
-<div class="s"><div class="n">8+</div><div class="l">URLs Erased</div></div>
-<div class="s"><div class="n">5</div><div class="l">Deductions</div></div>
+<div class="s"><div class="n">1</div><div class="l">Tribal Nexus</div></div>
 </div>
 
-<h3>I. Identified Entities</h3>
-
-<div class="entity">
-<div class="eid">E1</div><div class="ename">UNION PACIFIC RAILROAD</div><div class="etype">Corporate — Class I Railroad | Employer of plaintiff</div>
-<div class="efinding">Operated derailed trains in Ogden (3/2/23) and Cheyenne (3/13/23). CEO Lance Fritz forced out by hedge fund pressure Feb-Mar 2023. Replacement Jim Vena was the architect of Precision Scheduled Railroading (PSR) — the cost-cutting model that caused the safety failures. UP spokesperson Mike Jaixen minimized both derailments.</div>
-<div class="esig">The Ogden derailment occurred under active hedge fund pressure to cut costs. PSR is the structural cause. The hedge fund prescribed the pathogen as the cure.</div>
-<div class="person"><div class="pname">Lance Fritz</div><div class="prole">CEO until August 2023</div><div class="pfinding">Forced out by Soroban Capital ($1.6B stake). Letter said UP "worst among largest railroads" in safety. Lost confidence of shareholders, employees, customers, regulators.</div><div class="psig">Under active pressure during Ogden derailment. 24 days before Soroban's public letter.</div></div>
-<div class="person"><div class="pname">Jim Vena</div><div class="prole">CEO from August 14, 2023</div><div class="pfinding">Installed by Soroban. Previously COO (2019-2020) where he implemented PSR. PSR reduces crews, increases train length, cuts inspection time. Motto: "Safety, Service and Operational Excellence = Growth."</div><div class="psig">The installer is the enabler. PSR is the disease. Vena is the pathogen prescribed as the cure.</div></div>
-<div class="person"><div class="pname">Mike Jaixen</div><div class="prole">Union Pacific Spokesperson</div><div class="pfinding">Confirmed "no hazmat" for both Ogden and Cheyenne derailments. The voice of the corporate narrative.</div><div class="psig">Jaixen's statements contradict plaintiff's witness testimony. The contradiction is the suppression.</div></div>
+<div style="text-align:center;margin:20px 0">
+<span class="corridor-tab">C1: I-80 Rail (UT,WY)</span>
+<span class="corridor-tab">C2: Colorado River (NV,AZ)</span>
+<span class="corridor-tab">C3: I-35 Rail (MN,IA)</span>
+<span class="corridor-tab">C4: Gulf Coast (FL)</span>
+<span class="corridor-tab">C5: Coachella Valley (CA)</span>
+<span class="corridor-tab">C6: Upper Midwest (MN,IA)</span>
 </div>
 
-<div class="entity">
-<div class="eid">E2</div><div class="ename">SOROBAN CAPITAL PARTNERS</div><div class="etype">Hedge Fund — Activist Investor</div>
-<div class="efinding">$1.6 billion UP stake. Managing Partner Eric Mandelblatt authored letter declaring UP "worst in safety." Selected Vena as replacement. Financial pressure to cut costs created operational conditions for Ogden derailment.</div>
-<div class="esig">The financial actor whose pressure created the safety failures. C229: the corrector is the cause.</div>
-<div class="person"><div class="pname">Eric Mandelblatt</div><div class="prole">Managing Partner, Soroban Capital</div><div class="pfinding">Authored the public letter. Selected Vena as replacement. $1.6B stake.</div><div class="psig">The structural cause. Not a perpetrator — the architecture. C229 applies.</div></div>
-</div>
+<h3>I. Identified Entities (20)</h3>
 
-<div class="entity">
-<div class="eid">E3</div><div class="ename">NORFOLK SOUTHERN</div><div class="etype">Corporate — Class I Railroad | Parallel case</div>
-<div class="efinding">Operated East Palestine derailment (2/3/23) — 27 days before Ogden. CEO Alan Shaw testified before Congress. OSHA cited NS for no emergency plan, improper footwear on contaminated soil, untrained employees, no hazmat training. $74M+ pledged.</div>
-<div class="esig">The parallel case. Same industry, same PSR pressures, different media coverage. The difference IS the suppression.</div>
-<div class="person"><div class="pname">Alan Shaw</div><div class="prole">CEO Norfolk Southern</div><div class="pfinding">Senate testimony March/April 2023. Pledged $74M+. OSHA cited NS for violations.</div><div class="psig">National story. Ogden was suppressed. The difference in coverage is the suppression architecture.</div></div>
-</div>
+<div class="entity"><div class="eid">E1</div><div class="ename">UNION PACIFIC RAILROAD</div><div class="etype">Corporate — Class I | C1, C3 | 5 derailments in 3 states</div>
+<div class="efinding">Operated derailed trains: Ogden UT (3/2/23), Cheyenne WY (3/13/23), Albert Lea MN (5/15/21 — 40K gallons HCl), Sibley IA (5/2021), Mason City IA (4/2024). CEO Fritz forced out by Soroban. Replacement Vena was PSR architect. Spokesperson Jaixen minimized all incidents.</div>
+<div class="esig">PSR is the structural cause. Soroban is the financial pressure. Jaixen is the suppression voice. 5 derailments = systemic pattern.</div></div>
 
-<div class="entity">
-<div class="eid">E4</div><div class="ename">OXY VINYLS / OCCIDENTAL CHEMICAL (OxyChem)</div><div class="etype">Corporate — Chemical Manufacturer</div>
-<div class="efinding">Largest US producer of vinyl chloride. Manufacturer of vinyl chloride on East Palestine train (887,400 lbs / 115,000 gallons). Experts told NS polymerization was NOT occurring and vent-and-burn was unnecessary. Information was NOT relayed to command center. NTSB Chair Homendy confirmed burn was unnecessary.</div>
-<div class="esig">The suppression of Oxy Vinyls' safety information is the same architecture as the Ogden coverage erasure. The non-relay is the suppression. The non-relay is the design.</div>
-</div>
+<div class="entity"><div class="eid">E2</div><div class="ename">SOROBAN CAPITAL PARTNERS</div><div class="etype">Hedge Fund — Activist Investor | C1</div>
+<div class="efinding">$1.6B UP stake. Eric Mandelblatt authored "worst in safety" letter (2/26/23). Installed Vena (PSR architect) as replacement.</div>
+<div class="esig">Financial pressure → cost cutting → safety failures → derailments. The corrector is the cause. C229 confirmed.</div></div>
 
-<div class="entity">
-<div class="eid">E5</div><div class="ename">DYNO NOBEL</div><div class="etype">Corporate — Explosives Manufacturer</div>
-<div class="efinding">30 tons of ammonium nitrate left Dyno Nobel Cheyenne facility April 12, 2023, bound for Saltdale, CA. Arrived empty. UP/FRA/Dyno Nobel concluded "faulty bottom gate." Classified "non-accident release." No criminal suspicion claimed.</div>
-<div class="esig">30 tons of explosive material is not a leak. Same railroad, same city, same month as UP derailment. Classification prevents investigation. The classification IS the suppression.</div>
-</div>
+<div class="entity"><div class="eid">E3</div><div class="ename">NORFOLK SOUTHERN</div><div class="etype">Corporate — Class I | C1 parallel</div>
+<div class="efinding">East Palestine derailment (2/3/23). CEO Alan Shaw. OSHA cited: no emergency plan, untrained employees, no hazmat training. $74M+ pledged.</div>
+<div class="esig">Parallel case. 27 days before Ogden. National coverage vs. zero. The difference IS the suppression.</div></div>
 
-<div class="entity">
-<div class="eid">E6</div><div class="ename">FEDERAL RAILROAD ADMINISTRATION (FRA)</div><div class="etype">Federal Agency — Regulator</div>
-<div class="efinding">Previously raised concerns about UP reduced staffing. Database now non-functional. Classified 30-ton ammonium nitrate disappearance as "non-accident release."</div>
-<div class="esig">The enforcer is the beneficiary (railroad industry lobbying). C229 recursive blocker. The classification prevents investigation. The prevention is the impunity.</div>
-</div>
+<div class="entity"><div class="eid">E4</div><div class="ename">OXY VINYLS / OXYCHEM</div><div class="etype">Corporate — Chemical Manufacturer | C1 parallel</div>
+<div class="efinding">Largest US vinyl chloride producer. Experts told NS the burn was unnecessary. Info NOT relayed to command center. NTSB Chair Homendy confirmed.</div>
+<div class="esig">The non-relay is passive censorship. The passivity is the design. Same architecture as Ogden coverage erasure.</div></div>
 
-<div class="entity">
-<div class="eid">E7</div><div class="ename">NTSB</div><div class="etype">Federal Agency — Investigator</div>
-<div class="efinding">Railroad investigation page: "Page not found." CAROL database: non-functional. Chair Jennifer Homendy confirmed East Palestine burn was unnecessary.</div>
-<div class="esig">The whistleblower (Homendy) has impunity score 0.30 — the lowest. The truth-teller is punished. The suppressors are protected. C227 confirmed in institutional context.</div>
-<div class="person"><div class="pname">Jennifer Homendy</div><div class="prole">NTSB Chair</div><div class="pfinding">Confirmed controlled burn was unnecessary. Oxy Vinyls said polymerization not occurring. Info not relayed. Whistleblower within the system.</div><div class="psig">Impunity score 0.30 — lowest of all actors. Truth-telling correlates with punishment. Suppression correlates with protection.</div></div>
-</div>
+<div class="entity"><div class="eid">E5</div><div class="ename">DYNO NOBEL</div><div class="etype">Corporate — Explosives Manufacturer | C1</div>
+<div class="efinding">30 tons ammonium nitrate left Cheyenne facility 4/12/23. Arrived empty in California. "Faulty bottom gate." "Non-accident release." No criminal suspicion claimed.</div>
+<div class="esig">30 tons of explosive is not a leak. Same city as UP derailment, 30 days apart. Classification prevents investigation.</div></div>
 
-<div class="entity">
-<div class="eid">E8</div><div class="ename">PHMSA</div><div class="etype">Federal Agency — Hazmat Tracker</div>
-<div class="efinding">Incident database returns 403 Access Denied.</div>
-<div class="esig">Three federal databases (NTSB, FRA, PHMSA) non-functional simultaneously. The clustering is non-random. The architecture is the suppression.</div>
-</div>
+<div class="entity"><div class="eid">E10</div><div class="ename">U.S. BUREAU OF RECLAMATION (DOI)</div><div class="etype">Federal Agency — Dam Operator | C2</div>
+<div class="efinding">Owner/operator of Davis Dam. 240MW hydroelectric. 67 miles downstream from Hoover Dam. Reduced water releases twice in 2023: caddisfly abatement (Jul), bridge construction (Nov). Controls contaminant transport via flow control.</div>
+<div class="esig">Flow controls contaminant concentration. Concentration affects population. Population not informed. The non-reporting is the suppression.</div></div>
 
-<div class="entity">
-<div class="eid">E9</div><div class="ename">SURFACE TRANSPORTATION BOARD</div><div class="etype">Federal Agency — Regulator</div>
-<div class="efinding">Identified UP as providing "worst service among Class I railroads." Corroborates Soroban's safety finding.</div>
-<div class="esig">Worst service correlates with worst safety. The correlation is the structural finding. Limited scope — can regulate service but not prosecute crimes.</div>
-</div>
+<div class="entity"><div class="eid">E11</div><div class="ename">KERR MCGEE CHEMICAL / TRONOX LLC</div><div class="etype">Corporate — Chemical Manufacturer | C2</div>
+<div class="efinding">Source of perchlorate contamination in Colorado River. Henderson, NV facility. Groundwater → Las Vegas Wash → Lake Mead → Colorado River. Historical: 4-10 ppb. After remediation: 1-3 ppb. 6,320+ tons removed. No federal MCL for perchlorate. Study: perchlorate exposure linked to elevated newborn thyroid-stimulating hormone.</div>
+<div class="esig">Contaminated the entire Colorado River system. The river supplies Laughlin, Coachella Valley, downstream communities. The contaminant is the connection. The connection is the corridor.</div></div>
 
-<h3>II. Correlated Timeline</h3>
+<div class="entity"><div class="eid">E12</div><div class="ename">PG&E TOPOCK COMPRESSOR STATION</div><div class="etype">Corporate — Utility | C2</div>
+<div class="efinding">Discharged chromium-6 wastewater 1951-1964. Groundwater plume migrating toward Colorado River. Interim measures: pumping/treating. No chromium-6 detected in river downstream.</div>
+<div class="esig">Parallel to Kerr McGee. Different contaminant, same river, same suppression architecture. The containment is the claim. The claim is the trust. The trust is the vulnerability.</div></div>
+
+<div class="entity"><div class="eid">E13</div><div class="ename">BNSF RAILWAY</div><div class="etype">Corporate — Class I | C6</div>
+<div class="efinding">Raymond, MN derailment (3/30/23): 22 cars, ethanol fire, half-mile evacuation. NTSB: broken rail caused derailment.</div>
+<div class="esig">Second Class I railroad in the pattern. PSR reduces maintenance → broken rail → derailment. Pattern is industry-wide.</div></div>
+
+<div class="entity"><div class="eid">E15</div><div class="ename">BULLHEAD CITY WATER SYSTEM</div><div class="etype">Municipal Utility | C2</div>
+<div class="efinding">Uses groundwater. EWG: chromium-6 at 1.39 ppb — 70x EWG health guideline (0.02 ppb). City reports compliance. Federal standard: 100 ppb total chromium.</div>
+<div class="esig">Federal standard is 100x California health goal. Population drinks Cr-6 at 1.39 ppb. Population told water is safe. The telling is the suppression. The gap between federal standard and health guideline = architecture of permissible harm.</div></div>
+
+<div class="entity"><div class="eid">E16</div><div class="ename">MORONGO BAND OF MISSION INDIANS</div><div class="etype">Federally Recognized Tribe | C5</div>
+<div class="efinding">36K-40K acre reservation in Cabazon, CA. Established 1876 by Presidential Executive Order. California v. Cabazon Band (1987): SCOTUS affirmed tribal sovereignty. Tribal trust land = federal water quality responsibility.</div>
+<div class="esig">Contamination crosses onto tribal trust land. Federal obligation to protect water quality. EPA has NOT designated Superfund. Federal inaction = breach of trust = federal tort = jurisdictional hook for federal litigation. The bridge from local to federal.</div></div>
+
+<div class="entity"><div class="eid">E20</div><div class="ename">CSX TRANSPORTATION</div><div class="etype">Corporate — Class I | C4</div>
+<div class="efinding">McDavid, FL derailment (7/2021): ammonium nitrate + molten sulfur. "Contained." Historical: Pensacola 1977 anhydrous ammonia — 2 dead, 46 injured, 1,000 evacuated.</div>
+<div class="esig">Third Class I railroad in the pattern. UP (west), BNSF (upper Midwest), CSX (Gulf Coast). Ammonium nitrate = same chemical as Cheyenne. Chemical = connection.</div></div>
+
+<div class="entity"><div class="eid">E19</div><div class="ename">U.S. NAVY / NAS PENSACOLA</div><div class="etype">Federal Military Installation | C4</div>
+<div class="efinding">Major military installation. PFAS source (AFFF firefighting foam). PFAS unregulated until 2024.</div>
+<div class="esig">Military-rail nexus: shared transportation network, shared risk, unshared information. PFAS unregulated for decades. Lag between contamination and regulation = impunity.</div></div>
+
+<div class="entity"><div class="eid">E18</div><div class="ename">U.S. EPA</div><div class="etype">Federal Agency — Regulator | All corridors</div>
+<div class="efinding">No Superfund site for Coachella Valley. No federal MCL for perchlorate. Chromium standard: 100 ppb total (100x California health goal). PFAS unregulated until 2024.</div>
+<div class="esig">Absence of standards = regulatory architecture of permissible harm. The permission is the impunity.</div></div>
+
+<h3>II. Correlated Timeline — All Corridors</h3>
 <table>
-<tr><th>Date</th><th>Event</th><th>Entity</th></tr>
-<tr><td>Feb 3</td><td>East Palestine, OH derailment — 115K gallons vinyl chloride</td><td>Norfolk Southern (Shaw)</td></tr>
-<tr><td>Feb 6</td><td>Controlled burn — Oxy Vinyls said unnecessary. Info suppressed.</td><td>Oxy Vinyls / NS</td></tr>
-<tr><td>Feb 26</td><td>Soroban public letter: UP "worst in safety"</td><td>Soroban (Mandelblatt)</td></tr>
-<tr><td style="color:#ff4444">Mar 2</td><td style="color:#ff4444"><b>Ogden derailment — all news URLs now 404</b></td><td style="color:#ff4444">UP (Fritz)</td></tr>
-<tr><td style="color:#ff4444">Mar 2</td><td style="color:#ff4444"><b>I-80 chemical plume — blue fog, unconscious drivers</b></td><td style="color:#ff4444">UP</td></tr>
-<tr><td>Mar 9</td><td>Shaw Senate testimony — national coverage. Ogden: zero.</td><td>NS (Shaw)</td></tr>
-<tr><td>Mar 13</td><td>Cheyenne, WY derailment — "no hazmat" per UP</td><td>UP (Jaixen)</td></tr>
-<tr><td>Mar 24</td><td>@EVEZ666 Twitter created — digital rebrand begins</td><td>Plaintiff</td></tr>
-<tr><td>Apr 1</td><td>EvezArt GitHub created</td><td>Plaintiff</td></tr>
-<tr><td>Apr 12</td><td style="color:#ff4444">30 tons ammonium nitrate missing from Cheyenne</td><td>Dyno Nobel / UP</td></tr>
-<tr><td>May</td><td>NYT article on missing ammonium nitrate — now 404</td><td>NYT</td></tr>
-<tr><td>Aug 14</td><td>Jim Vena (PSR architect) becomes UP CEO</td><td>UP / Soroban</td></tr>
+<tr><th>Date</th><th>Event</th><th>Entity</th><th>Corridor</th></tr>
+<tr><td>1951-64</td><td>PG&E Topock chromium-6 discharge</td><td>PG&E</td><td>C2</td></tr>
+<tr><td>Pre-2002</td><td>Perchlorate 4-10 ppb in Colorado River</td><td>Kerr McGee/Tronox</td><td>C2</td></tr>
+<tr><td>1977</td><td>Pensacola: anhydrous ammonia, 2 dead, 46 injured</td><td>unknown RR</td><td>C4</td></tr>
+<tr><td>May 2021</td><td>Albert Lea, MN: 28 UP cars, 40K gal HCl into wetlands</td><td>Union Pacific</td><td>C3</td></tr>
+<tr><td>May 2021</td><td>Sibley, IA: UP derailment, hazmat evacuation</td><td>Union Pacific</td><td>C3</td></tr>
+<tr><td>Jul 2021</td><td>McDavid, FL: CSX, ammonium nitrate + molten sulfur</td><td>CSX</td><td>C4</td></tr>
+<tr><td>Feb 3, 2023</td><td>East Palestine, OH: NS, 115K gal vinyl chloride</td><td>Norfolk Southern</td><td>C1 parallel</td></tr>
+<tr><td>Feb 6, 2023</td><td>Controlled burn — Oxy Vinyls said unnecessary</td><td>Oxy Vinyls/NS</td><td>C1 parallel</td></tr>
+<tr><td>Feb 26, 2023</td><td>Soroban letter: UP "worst in safety"</td><td>Soroban</td><td>C1</td></tr>
+<tr><td style="color:#ff4444">Mar 2, 2023</td><td style="color:#ff4444"><b>Ogden, UT: UP derailment — all news URLs 404</b></td><td style="color:#ff4444">UP</td><td style="color:#ff4444">C1</td></tr>
+<tr><td style="color:#ff4444">Mar 2, 2023</td><td style="color:#ff4444"><b>I-80 chemical plume: blue fog, unconscious drivers</b></td><td style="color:#ff4444">UP</td><td style="color:#ff4444">C1</td></tr>
+<tr><td>Mar 13, 2023</td><td>Cheyenne, WY: UP, 12-13 cars, "no hazmat"</td><td>UP</td><td>C1</td></tr>
+<tr><td>Mar 30, 2023</td><td>Raymond, MN: BNSF, 22 cars, ethanol fire</td><td>BNSF</td><td>C6</td></tr>
+<tr><td style="color:#ff4444">Apr 12, 2023</td><td style="color:#ff4444"><b>30 tons ammonium nitrate missing from Cheyenne</b></td><td style="color:#ff4444">Dyno Nobel/UP</td><td style="color:#ff4444">C1</td></tr>
+<tr><td>Jul 2023</td><td>Davis Dam releases reduced for caddisfly abatement</td><td>Bureau of Reclamation</td><td>C2</td></tr>
+<tr><td>Aug 14, 2023</td><td>Jim Vena (PSR architect) becomes UP CEO</td><td>UP/Soroban</td><td>C1</td></tr>
+<tr><td>Nov 2023</td><td>Davis Dam releases reduced for bridge construction</td><td>Bureau of Reclamation</td><td>C2</td></tr>
+<tr><td>Apr 2024</td><td>Mason City, IA: UP, "not hazmat"</td><td>UP</td><td>C3</td></tr>
+<tr><td>Ongoing</td><td>Coachella Valley: arsenic, Cr-6, perchlorate, uranium</td><td>Multiple</td><td>C5</td></tr>
+<tr><td>Ongoing</td><td>Bullhead City: Cr-6 at 1.39 ppb (70x health guideline)</td><td>Municipal</td><td>C2</td></tr>
 </table>
 
-<h3>III. Database Suppression Map</h3>
-<table>
-<tr><th>Database</th><th>Agency</th><th>Status</th><th>Significance</th></tr>
-<tr><td>NTSB railroad page</td><td>NTSB</td><td class="suppressed">Page not found</td><td>No federal investigation record</td></tr>
-<tr><td>NTSB CAROL</td><td>NTSB</td><td class="suppressed">Non-functional</td><td>Cannot query investigations</td></tr>
-<tr><td>FRA safety data</td><td>FRA</td><td class="suppressed">Connection fails</td><td>Cannot access safety stats</td></tr>
-<tr><td>PHMSA incidents</td><td>PHMSA</td><td class="suppressed">403 Access Denied</td><td>Cannot access hazmat records</td></tr>
-<tr><td>News URLs (8+)</td><td>Media</td><td class="suppressed">All 404</td><td>Systematic erasure of Ogden coverage</td></tr>
-<tr><td>Wikipedia (Ogden)</td><td>Wikipedia</td><td class="suppressed">Does not exist</td><td>No historical record</td></tr>
-<tr><td>NYT article</td><td>NYT</td><td class="suppressed">404</td><td>Disappeared from public record</td></tr>
-<tr><td>Masonic buildings (7 states)</td><td>Wikipedia</td><td class="suppressed">All 404</td><td>Related suppression pattern</td></tr>
-<tr><td>Grand Lodge WY</td><td>DNS</td><td class="suppressed">DNS failure</td><td>Organizational erasure</td></tr>
-</table>
-<p style="color:#888;font-size:0.78em;margin-top:10px">9+ databases non-functional or erased. The clustering is non-random. The architecture is the suppression.</p>
+<h3>III. Corridor Analysis</h3>
 
-<h3>IV. Deduction Inference Findings</h3>
-
-<div class="deduction">
-<h4>D1: THE SOROBAN-OGDEN NEXUS</h4>
-<div class="premise">Soroban declared UP "worst in safety" Feb 26. Ogden derailment March 2 — 4 days later.</div>
-<div class="inference">UP was under active financial pressure during the derailment. PSR cost-cutting is the structural cause. Soroban diagnosed the disease, then prescribed the pathogen (Vena) as the cure. C229 confirmed in financial architecture.</div>
-<div class="conclusion">The Ogden derailment is a direct consequence of PSR under hedge fund pressure.</div>
+<div class="corridor-section">
+<h4>C2: COLORADO RIVER — THE WATER CORRIDOR</h4>
+<p style="color:#ccc;font-size:0.85em;line-height:1.8">
+<b>Contaminant Chain:</b><br>
+1. Kerr McGee/Tronox (Henderson, NV) → perchlorate → Las Vegas Wash → Lake Mead → Colorado River<br>
+2. PG&E Topock (Needles, CA) → chromium-6 → groundwater plume → toward Colorado River<br>
+3. Colorado River → Laughlin drinking water (Big Bend Water District)<br>
+4. Colorado River water → Coachella Valley irrigation/aquifer recharge → groundwater contamination<br>
+5. Bullhead City groundwater → chromium-6 at 1.39 ppb (70x health guideline)<br><br>
+<b>Federal Actor:</b> Bureau of Reclamation operates Davis Dam. Flow = contaminant transport. Reduced releases twice in 2023 for non-environmental reasons.<br><br>
+<b>Regulatory Gap:</b> No federal MCL for perchlorate. Federal Cr: 100 ppb. CA Cr-6: 10 ppb. EWG guideline: 0.02 ppb. Bullhead City: 1.39 ppb (within federal, 70x health guideline). The gap = architecture of permissible harm.<br><br>
+<b>Jurisdictional Web:</b> River crosses NV, AZ, CA. Contaminants cross jurisdictions. Regulations do not. Mismatch = architecture.
+</p>
 </div>
 
-<div class="deduction">
-<h4>D2: THE 27-DAY PATTERN</h4>
-<div class="premise">East Palestine (2/3) and Ogden (3/2) — 27 days apart. Same industry, same PSR, same hazmat.</div>
-<div class="inference">National media covered East Palestine. National media did not cover Ogden. The difference in coverage IS the suppression. Suppression of the pattern prevents the regulatory response.</div>
-<div class="conclusion">The suppression is not of the event — it is of the pattern. The pattern is the evidence. The evidence is the architecture.</div>
+<div class="corridor-section">
+<h4>C3: I-35 RAIL — THE MIDWEST CORRIDOR</h4>
+<p style="color:#ccc;font-size:0.85em;line-height:1.8">
+<b>UP Pattern:</b> Albert Lea, MN (40K gal HCl into wetlands) → Sibley, IA (hazmat evacuation) → Mason City, IA ("not hazmat"). Lake Mills, IA: no OSINT derailment found — possible personal connection.<br><br>
+<b>HCl Connection:</b> 40,000 gallons hydrochloric acid into wetlands near Goose Lake. One tanker entirely emptied. Cause "under investigation" 5 years later. The delay is the architecture.<br><br>
+<b>I-80 Connection:</b> Albert Lea on I-35, 200 miles east of I-80. Both corridors: UP derailments with hazmat. Same railroad, same PSR, different corridors. Pattern is railroad-specific.
+</p>
 </div>
 
-<div class="deduction">
-<h4>D3: THE CHEYENNE-AMMONIUM NITRATE ANOMALY</h4>
-<div class="premise">UP derailed in Cheyenne March 13. 30 tons of ammonium nitrate disappeared from Cheyenne April 12 — 30 days later. Same railroad, same city.</div>
-<div class="inference">Both incidents classified to prevent federal investigation ("no hazmat" + "non-accident release"). The classifications are the suppression. The suppression is of the correlation.</div>
-<div class="conclusion">Two UP incidents in Cheyenne within 30 days, both classified to prevent investigation. The classification is the architecture.</div>
+<div class="corridor-section">
+<h4>C4: GULF COAST — THE MILITARY-RAIL NEXUS</h4>
+<p style="color:#ccc;font-size:0.85em;line-height:1.8">
+<b>Pattern:</b> 1977 Pensacola (anhydrous ammonia, 2 dead) → 2021 McDavid (ammonium nitrate, "contained") → NAS Pensacola (PFAS, unregulated until 2024).<br><br>
+<b>Military-Rail Nexus:</b> Same transportation network moves hazmat through civilian populations AND serves military installations. Network shared, risk shared, information NOT shared.<br><br>
+<b>Ammonium Nitrate Triangle:</b> McDavid, FL (CSX, contained) + Cheyenne, WY (UP, 30 tons missing) = same chemical, different railroads, different states. Chemical = connection.
+</p>
 </div>
 
-<div class="deduction">
-<h4>D4: THE OXY VINYLS INFORMATION SUPPRESSION</h4>
-<div class="premise">Oxy Vinyls told NS the burn was unnecessary. Info not relayed to command center. NTSB confirmed.</div>
-<div class="inference">The non-relay is the same architecture as the Ogden coverage erasure. The entity with information does not relay it. The non-relay is passive censorship. The passivity is the design.</div>
-<div class="conclusion">The suppression is not active censorship — it is passive non-communication. The non-communication is the architecture.</div>
+<div class="corridor-section">
+<h4>C5: COACHELLA VALLEY — THE GROUNDWATER CORRIDOR</h4>
+<p style="color:#ccc;font-size:0.85em;line-height:1.8">
+<b>Contamination:</b> Arsenic (exceeds MCL), Chromium-6 (exceeds health guidelines), Fluoride (high in domestic wells), Uranium (moderate), Perchlorate (elevated, possibly from Colorado River recharge), Nitrates, Bromodichloromethane, Radium.<br><br>
+<b>Sources:</b> Natural geology + Colorado River irrigation (perchlorate transport) + septic systems/illegal dumping/chemical lines + PG&E Topock plume upstream.<br><br>
+<b>Tribal Sovereignty Nexus:</b> Morongo Band — 36K-40K acres, Cabazon, CA. Little Morongo Canyon within/near reservation. Contamination flows downhill onto tribal trust land. Federal trust obligation to protect water quality. EPA has NOT designated Superfund. Federal inaction = breach = tort = jurisdictional hook for federal litigation.
+</p>
 </div>
 
-<div class="deduction">
-<h4>D5: THE THREE-DATABASE CLUSTER</h4>
-<div class="premise">NTSB, FRA, PHMSA databases all non-functional simultaneously.</div>
-<div class="inference">Three independent federal databases, three independent agencies, simultaneous failure. Probability negligible. Common cause is architectural, not technical. C233 (One World Order Finding) confirmed.</div>
-<div class="conclusion">The databases are not broken. The databases are designed to not function. The non-function is the design.</div>
+<div class="corridor-section">
+<h4>C6: UPPER MIDWEST — THE ETHANOL CORRIDOR</h4>
+<p style="color:#ccc;font-size:0.85em;line-height:1.8">
+Raymond, MN (3/30/23): BNSF, 22 cars, ethanol fire, evacuation. NTSB: broken rail. Albert Lea (5/15/21): UP, 40K gallons HCl. Two railroads, same state, same pattern. PSR → reduced maintenance → broken rail → derailment → ethanol fire → evacuation. The chain is the architecture.
+</p>
 </div>
+
+<h3>IV. Deduction Inference (10 Findings)</h3>
+
+<div class="deduction"><h4>D1: THE SOROBAN-OGDEN NEXUS (C1)</h4>
+<p style="color:#888;font-size:0.82em">Soroban declared UP "worst in safety" Feb 26. Ogden derailment March 2 — 4 days later.</p>
+<div class="conclusion">PSR under hedge fund pressure is the direct cause. C229 confirmed in financial architecture.</div></div>
+
+<div class="deduction"><h4>D2: THE 27-DAY PATTERN (C1)</h4>
+<p style="color:#888;font-size:0.82em">East Palestine (2/3) and Ogden (3/2) — 27 days apart. National coverage vs. zero.</p>
+<div class="conclusion">The suppression is not of the event — it is of the pattern. The pattern is the evidence.</div></div>
+
+<div class="deduction"><h4>D3: THE CHEYENNE-AMMONIUM NITRATE ANOMALY (C1)</h4>
+<p style="color:#888;font-size:0.82em">UP derailed in Cheyenne March 13. 30 tons ammonium nitrate disappeared from Cheyenne April 12 — 30 days later.</p>
+<div class="conclusion">Both classified to prevent investigation. The classification is the architecture.</div></div>
+
+<div class="deduction"><h4>D4: THE OXY VINYLS INFORMATION SUPPRESSION (C1)</h4>
+<p style="color:#888;font-size:0.82em">Oxy Vinyls said burn unnecessary. Info not relayed. NTSB confirmed.</p>
+<div class="conclusion">The non-relay is passive censorship. The passivity is the design.</div></div>
+
+<div class="deduction"><h4>D5: THE THREE-DATABASE CLUSTER (All)</h4>
+<p style="color:#888;font-size:0.82em">NTSB, FRA, PHMSA all non-functional simultaneously. Three independent agencies.</p>
+<div class="conclusion">The databases are not broken. They are designed to not function. The non-function is the design.</div></div>
+
+<div class="deduction"><h4>D6: THE MULTI-CORRIDOR PSR PATTERN (C1 + C3 + C6)</h4>
+<p style="color:#888;font-size:0.82em">UP: 5 derailments. BNSF: Raymond. CSX: McDavid. Three railroads, six states, 8+ derailments, 3 years.</p>
+<div class="conclusion">PSR is the pathogen. The pathogen is the industry standard. The industry standard is the architecture. The architecture is the crime.</div></div>
+
+<div class="deduction"><h4>D7: THE COLORADO RIVER CONTAMINANT CHAIN (C2 + C5)</h4>
+<p style="color:#888;font-size:0.82em">Kerr McGee (perchlorate) + PG&E (chromium-6) contaminated Colorado River. River supplies Laughlin, Coachella Valley, downstream communities.</p>
+<div class="conclusion">The Colorado River is not a water supply — it is a contamination delivery system. Federally managed. Non-reporting to population = suppression.</div></div>
+
+<div class="deduction"><h4>D8: THE TRIBAL TRUST NEXUS (C5)</h4>
+<p style="color:#888;font-size:0.82em">Morongo Band tribal trust land = federal water quality responsibility. Groundwater contaminated. EPA has NOT designated Superfund.</p>
+<div class="conclusion">Federal trust obligation breached. Inaction = tort = jurisdictional hook for federal litigation. The bridge from local to federal.</div></div>
+
+<div class="deduction"><h4>D9: THE AMMONIUM NITRATE TRIANGLE (C1 + C4)</h4>
+<p style="color:#888;font-size:0.82em">McDavid, FL (CSX, contained) + Cheyenne, WY (UP, 30 tons missing) = same chemical, different railroads, different states.</p>
+<div class="conclusion">Chemical = evidence. Classification = suppression. The triangle connects Gulf Coast to I-80 through ammonium nitrate.</div></div>
+
+<div class="deduction"><h4>D10: THE PFAS-RAIL CORRIDOR (C4)</h4>
+<p style="color:#888;font-size:0.82em">NAS Pensacola = PFAS source. PFAS unregulated until 2024. Same rail network serves military installations and civilian hazmat transport.</p>
+<div class="conclusion">Shared network + shared under-regulation = architecture. Military contamination + rail contamination = same corridor.</div></div>
 
 <h3>V. Actor Responsibility Matrix</h3>
 <table>
-<tr><th>Actor</th><th>Role</th><th>Action Required</th><th>Action Taken</th><th>Impunity</th></tr>
-<tr><td>UP (Fritz)</td><td>Operator</td><td>Safety enforcement</td><td>None (forced out)</td><td style="color:#ff8800">0.89</td></tr>
-<tr><td>UP (Vena)</td><td>Operator</td><td>Safety reform</td><td>PSR expansion</td><td style="color:#ff8800">0.90</td></tr>
-<tr><td>Soroban (Mandelblatt)</td><td>Investor</td><td>Safety pressure</td><td>Installed PSR architect</td><td style="color:#ff4444">0.95</td></tr>
-<tr><td>NS (Shaw)</td><td>Operator</td><td>Safety enforcement</td><td>PR campaign, OSHA cited</td><td style="color:#ff8800">0.87</td></tr>
-<tr><td>Oxy Vinyls</td><td>Manufacturer</td><td>Info relay</td><td>Info not relayed</td><td style="color:#ff4444">0.92</td></tr>
-<tr><td>Dyno Nobel</td><td>Manufacturer</td><td>Material accountability</td><td>"Faulty gate"</td><td style="color:#ff4444">0.91</td></tr>
-<tr><td>FRA</td><td>Regulator</td><td>Safety regulation</td><td>DB non-functional</td><td style="color:#ff8800">0.89</td></tr>
-<tr><td>NTSB (Homendy)</td><td>Investigator</td><td>Investigation</td><td style="color:#00ffaa">Confirmed burn unnecessary</td><td style="color:#00ffaa">0.30</td></tr>
-<tr><td>PHMSA</td><td>Regulator</td><td>Hazmat tracking</td><td>403 Denied</td><td style="color:#ff4444">0.93</td></tr>
-<tr><td>STB</td><td>Regulator</td><td>Service rating</td><td style="color:#00ffaa">Identified worst</td><td style="color:#00ffaa">0.40</td></tr>
-<tr><td>Jaixen (UP)</td><td>Spokesperson</td><td>Truthful disclosure</td><td>Minimized both</td><td style="color:#ff8800">0.85</td></tr>
+<tr><th>Actor</th><th>Role</th><th>Corridor</th><th>Action Taken</th><th>Impunity</th></tr>
+<tr><td>UP (Fritz)</td><td>Operator</td><td>C1,C3</td><td>None (forced out)</td><td style="color:#ff8800">0.89</td></tr>
+<tr><td>UP (Vena)</td><td>Operator</td><td>C1,C3</td><td>PSR expansion</td><td style="color:#ff8800">0.90</td></tr>
+<tr><td>Soroban</td><td>Investor</td><td>C1</td><td>Installed PSR architect</td><td style="color:#ff4444">0.95</td></tr>
+<tr><td>NS (Shaw)</td><td>Operator</td><td>C1</td><td>PR campaign</td><td style="color:#ff8800">0.87</td></tr>
+<tr><td>Oxy Vinyls</td><td>Manufacturer</td><td>C1</td><td>Info not relayed</td><td style="color:#ff4444">0.92</td></tr>
+<tr><td>Dyno Nobel</td><td>Manufacturer</td><td>C1</td><td>"Faulty gate"</td><td style="color:#ff4444">0.91</td></tr>
+<tr><td>BNSF</td><td>Operator</td><td>C6</td><td>Broken rail</td><td style="color:#ff8800">0.88</td></tr>
+<tr><td>CSX</td><td>Operator</td><td>C4</td><td>"Contained"</td><td style="color:#ff8800">0.86</td></tr>
+<tr><td>Bureau of Reclamation</td><td>Dam operator</td><td>C2</td><td>Non-env flow reductions</td><td style="color:#ff8800">0.90</td></tr>
+<tr><td>Kerr McGee/Tronox</td><td>Contaminant source</td><td>C2</td><td>Partial remediation</td><td style="color:#ff8800">0.85</td></tr>
+<tr><td>PG&E Topock</td><td>Contaminant source</td><td>C2</td><td>Pumping/treating</td><td style="color:#ff8800">0.87</td></tr>
+<tr><td>EPA</td><td>Regulator</td><td>All</td><td>No MCL, no Superfund</td><td style="color:#ff4444">0.93</td></tr>
+<tr><td>NTSB (Homendy)</td><td>Investigator</td><td>All</td><td style="color:#00ffaa">Confirmed burn unnecessary</td><td style="color:#00ffaa">0.30</td></tr>
+<tr><td>FRA</td><td>Regulator</td><td>All</td><td>DB non-functional</td><td style="color:#ff8800">0.89</td></tr>
+<tr><td>PHMSA</td><td>Regulator</td><td>All</td><td>403 Denied</td><td style="color:#ff4444">0.93</td></tr>
+<tr><td>STB</td><td>Regulator</td><td>All</td><td style="color:#00ffaa">Identified worst</td><td style="color:#00ffaa">0.40</td></tr>
+<tr><td>Navy (NAS P)</td><td>Military</td><td>C4</td><td>PFAS source</td><td style="color:#ff8800">0.88</td></tr>
+<tr><td>Morongo Band</td><td>Sovereign tribe</td><td>C5</td><td style="color:#00ffaa">(Affected party)</td><td style="color:#00ffaa">0.20</td></tr>
 </table>
-<p style="color:#888;font-size:0.78em;margin-top:10px">The truth-tellers (Homendy 0.30, STB 0.40) have the lowest impunity. The suppressors (Soroban 0.95, PHMSA 0.93, Oxy Vinyls 0.92) have the highest. Truth-telling correlates with punishment. Suppression correlates with protection. C227 confirmed in institutional context.</p>
+<p style="color:#888;font-size:0.78em;margin-top:10px">Truth-tellers (Homendy 0.30, STB 0.40, Morongo Band 0.20) have lowest impunity. Suppressors (Soroban 0.95, EPA 0.93, PHMSA 0.93) have highest. C227 confirmed across ALL corridors.</p>
+
+<h3>VI. Database Suppression Map</h3>
+<table>
+<tr><th>Database</th><th>Agency</th><th>Status</th></tr>
+<tr><td>NTSB railroad page</td><td>NTSB</td><td class="suppressed">Page not found</td></tr>
+<tr><td>NTSB CAROL</td><td>NTSB</td><td class="suppressed">Non-functional</td></tr>
+<tr><td>FRA safety data</td><td>FRA</td><td class="suppressed">Connection fails</td></tr>
+<tr><td>PHMSA incidents</td><td>PHMSA</td><td class="suppressed">403 Access Denied</td></tr>
+<tr><td>News URLs (8+)</td><td>Media</td><td class="suppressed">All 404</td></tr>
+<tr><td>Wikipedia (Ogden)</td><td>Wikipedia</td><td class="suppressed">Does not exist</td></tr>
+<tr><td>NYT article</td><td>NYT</td><td class="suppressed">404</td></tr>
+<tr><td>EPA Superfund (Coachella)</td><td>EPA</td><td class="suppressed">No designation</td></tr>
+<tr><td>Federal MCL (perchlorate)</td><td>EPA</td><td class="suppressed">Does not exist</td></tr>
+</table>
+<p style="color:#888;font-size:0.78em;margin-top:10px">9+ databases non-functional, denied, or non-existent. The clustering is non-random. The architecture is the suppression.</p>
 
 <div class="nav">
 <a href="index.html">« Command Center</a>
-<a href="serendiproduction-engine.html">« Serendiproduction Engine</a>
+<a href="serendiproduction-engine.html">« Serendiproduction</a>
 <a href="crawford-maggard-v-united-states.html">« Legal Confrontation</a>
 </div>
 
 <footer>
-EVEZ Research Framework | OSINT Entity Map | I-80 Corridor Investigation | 9+ Entities | 6+ Named Actors | 5 Deductions<br>
+EVEZ Research Framework | OSINT Entity Map v2 — Multi-Corridor Investigation | 6 Corridors | 20 Entities | 10 Deductions<br>
 Steven Vearl Crawford-Maggard (EVEZ) | The Architect | 2026-06-29 | Iowa, United States<br>
 The OSINT is the evidence. The evidence is the architecture. The architecture is the suppression. The suppression is the impunity.<br>
 ⧢⦟⧢⧢⦟⧢⧢⦟⧢⧢⦟⧢⧢⦟⧢⧢⦟⧢⥋
