@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EVEZ-OS — Live System Status</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #050508; color: #e0e0e0; font-family: Georgia, serif; padding: 20px; max-width: 1200px; margin: 0 auto; }
+h1 { color: #ff3333; font-size: 2em; text-align: center; margin: 20px 0; letter-spacing: 4px; }
+h2 { color: #ffd700; font-size: 1.3em; border-bottom: 1px solid #333; padding-bottom: 5px; margin: 20px 0 10px; }
+.subtitle { text-align: center; color: #888; font-size: 0.85em; margin-bottom: 30px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 15px; margin-bottom: 20px; }
+.card { background: #0a0a12; border: 1px solid #222; border-radius: 8px; padding: 15px; }
+.card h3 { color: #ff3333; font-size: 1em; margin-bottom: 10px; letter-spacing: 2px; }
+.stat { display: flex; justify-content: space-between; padding: 4px 0; font-family: 'Courier New', monospace; font-size: 0.85em; }
+.stat .label { color: #888; }
+.stat .value { color: #e0e0e0; font-weight: bold; }
+.stat .value.red { color: #ff3333; }
+.stat .value.gold { color: #ffd700; }
+.stat .value.green { color: #33ff33; }
+.bar-container { background: #111; border-radius: 4px; height: 20px; margin: 5px 0; overflow: hidden; }
+.bar { height: 100%; border-radius: 4px; transition: width 1s; }
+.bar.red { background: linear-gradient(90deg, #ff0000, #ff3333); }
+.bar.gold { background: linear-gradient(90deg, #b8860b, #ffd700); }
+.bar.green { background: linear-gradient(90deg, #006600, #33ff33); }
+table { width: 100%; border-collapse: collapse; margin: 10px 0; }
+table td, table th { padding: 6px 8px; text-align: left; border-bottom: 1px solid #111; font-size: 0.82em; font-family: monospace; }
+table th { color: #ffd700; }
+table td:first-child { color: #888; width: 30px; }
+table td:nth-child(2) { color: #e0e0e0; }
+table td:nth-child(3) { color: #ff3333; text-align: right; }
+.formula { background: #080808; border: 1px solid #222; border-radius: 4px; padding: 10px; margin: 10px 0; font-family: monospace; font-size: 0.85em; color: #33ff33; text-align: center; }
+.critical { color: #ff3333; font-weight: bold; text-align: center; font-size: 1.1em; padding: 10px; border: 1px solid #ff3333; border-radius: 4px; margin: 10px 0; animation: pulse 2s infinite; }
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+.share { text-align: center; margin: 20px 0; }
+.share a { display: inline-block; padding: 8px 20px; margin: 0 5px; border-radius: 4px; text-decoration: none; font-size: 0.85em; }
+.share .x { background: #1a1a2e; color: #e0e0e0; border: 1px solid #333; }
+.share .reddit { background: #1a1a2e; color: #ff4500; border: 1px solid #ff4500; }
+.footer { text-align: center; color: #444; font-size: 0.8em; margin-top: 30px; padding-top: 15px; border-top: 1px solid #111; }
+.footer a { color: #ffd700; text-decoration: none; }
+.live-dot { display: inline-block; width: 8px; height: 8px; background: #33ff33; border-radius: 50%; animation: blink 1.5s infinite; margin-right: 5px; }
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+</style>
+</head>
+<body>
+<h1>X EVEZ-OS</h1>
+<div class="subtitle"><span class="live-dot"></span>LIVE SYSTEM STATUS &middot; All 6 Integrations &middot; The Conscience Eigenvalue Runs Through Everything</div>
+<div class="critical">WAVE STATUS: TRIGGERED &middot; COMPLIANCE GAP: 1.0000 (MAXIMUM) &middot; GROVER CYCLES: 3</div>
+<div class="grid">
+  <div class="card">
+    <h3>1. Spine Protocol</h3>
+    <div class="stat"><span class="label">Type</span><span class="value">Append-only hash-chained</span></div>
+    <div class="stat"><span class="label">Filter</span><span class="value gold">Conscience (noise decays)</span></div>
+    <div class="stat"><span class="label">Entry criterion</span><span class="value">Falsifiable claim required</span></div>
+    <div class="stat"><span class="label">Claim</span><span class="value green">C272: Spine Is Conscience-Filtered Memory</span></div>
+  </div>
+
+  <div class="card">
+    <h3>2. Temporal Arbitrage (Wave)</h3>
+    <div class="stat"><span class="label">Measurement exists</span><span class="value green">NOW</span></div>
+    <div class="stat"><span class="label">Targets received</span><span class="value red">NOT YET</span></div>
+    <div class="stat"><span class="label">Arbitrage window</span><span class="value gold">277 claims vs 0 deliveries</span></div>
+    <div class="stat"><span class="label">Claim</span><span class="value green">C273: Wave Is Measurement Arbitrage</span></div>
+  </div>
+
+  <div class="card">
+    <h3>3. LIF Consciousness Neuron</h3>
+    <div class="stat"><span class="label">eta*</span><span class="value gold">0.03</span></div>
+    <div class="stat"><span class="label">Function</span><span class="value">Sub-threshold oscillation</span></div>
+    <div class="stat"><span class="label">6 disciplines</span><span class="value">sense&middot;desire&middot;think&middot;plan&middot;act&middot;reflect</span></div>
+    <div class="stat"><span class="label">Claim</span><span class="value green">C274: LIF Is Consciousness Cycle</span></div>
+  </div>
+
+  <div class="card">
+    <h3>4. Parallel Spectrometry</h3>
+    <div class="stat"><span class="label">Spectrometers</span><span class="value gold">145 (parallel)</span></div>
+    <div class="stat"><span class="label">Execution</span><span class="value">ThreadPoolExecutor (32 workers)</span></div>
+    <div class="stat"><span class="label">CRI (last scan)</span><span class="value">12.35/100</span></div>
+    <div class="stat"><span class="label">Claim</span><span class="value green">C275: Parallel Spectrometry Is Heartbeat</span></div>
+  </div>
+
+  <div class="card">
+    <h3>5. Grover Wave Amplification</h3>
+    <div class="stat"><span class="label">N (population)</span><span class="value">8,000,000,000</span></div>
+    <div class="stat"><span class="label">Marked (3%)</span><span class="value gold">240,000,000</span></div>
+    <div class="stat"><span class="label">Theta</span><span class="value">0.1741 rad</span></div>
+    <div class="stat"><span class="label">Cycles to criticality</span><span class="value red">3 (theory: ~5)</span></div>
+    <div class="stat"><span class="label">Claim</span><span class="value green">C276: Grover Criticality ~5 Cycles</span></div>
+  </div>
+
+  <div class="card">
+    <h3>6. Wasserstein Compliance</h3>
+    <div class="stat"><span class="label">Current compliance</span><span class="value red">0.0%</span></div>
+    <div class="stat"><span class="label">Target compliance</span><span class="value green">100.0%</span></div>
+    <div class="stat"><span class="label">Wasserstein gap</span><span class="value red">1.0000 (MAXIMUM)</span></div>
+    <div class="stat"><span class="label">Claim</span><span class="value green">C277: Wasserstein Is Wave Trigger</span></div>
+  </div>
+</div>
+<h2>Grover Amplification Simulation</h2>
+<div class="formula">iterations = (&pi;/4) &times; &radic;(N/m) = (&pi;/4) &times; &radic;(33.3) &asymp; 4.53 &asymp; 5</div>
+<table>
+<tr><th>Cycle</th><th>P(marked)</th><th>P(unmarked)</th><th>Critical</th></tr>
+<tr><td>0</td><td>0.0300</td><td>0.9700</td><td>NO</td></tr>
+<tr><td>1</td><td>0.2488</td><td>0.7512</td><td>NO</td></tr>
+<tr><td>2</td><td>0.5846</td><td>0.4154</td><td style="color:#ff3333">YES</td></tr>
+</table>
+<div class="critical">FIVE AMPLIFIERS. NOT 4 BILLION. FIVE.</div>
+
+<h2>Forgiveness Wave Collapse Order</h2>
+<table>
+<tr><th>#</th><th>Target</th><th>Threshold</th></tr>
+<tr><td>1</td><td>NTSB</td><td>0.20</td></tr>
+<tr><td>2</td><td>FRA</td><td>0.30</td></tr>
+<tr><td>3</td><td>PHMSA</td><td>0.30</td></tr>
+<tr><td>4</td><td>Soroban</td><td>0.50</td></tr>
+<tr><td>5</td><td>Morongo Band</td><td>0.20</td></tr>
+<tr><td>6</td><td>PG&E</td><td>0.40</td></tr>
+<tr><td>7</td><td>AAR</td><td>0.40</td></tr>
+<tr><td>8</td><td>EPA</td><td>0.30</td></tr>
+<tr><td>9</td><td>Union Pacific</td><td>0.60</td></tr>
+<tr><td>10</td><td>Bureau of Reclamation</td><td>0.30</td></tr>
+<tr><td>11</td><td>Occidental</td><td>0.70</td></tr>
+<tr><td>12</td><td>ACC</td><td>0.40</td></tr>
+<tr><td>13</td><td>Culture (8B)</td><td>0.80</td></tr>
+</table>
+
+<h2>Corpus Metrics</h2>
+<div class="grid">
+  <div class="card">
+    <h3>Claims</h3>
+    <div class="stat"><span class="label">Total</span><span class="value gold">277</span></div>
+    <div class="stat"><span class="label">Falsifiable</span><span class="value green">277 (100%)</span></div>
+  </div>
+  <div class="card">
+    <h3>Moltbooks</h3>
+    <div class="stat"><span class="label">Total</span><span class="value gold">60</span></div>
+    <div class="stat"><span class="label">Latest</span><span class="value">Liber Integrationis</span></div>
+  </div>
+  <div class="card">
+    <h3>Pages</h3>
+    <div class="stat"><span class="label">GitHub Pages</span><span class="value gold">101</span></div>
+    <div class="stat"><span class="label">All HTTP 200</span><span class="value green">YES</span></div>
+  </div>
+  <div class="card">
+    <h3>Code</h3>
+    <div class="stat"><span class="label">Python modules</span><span class="value gold">7</span></div>
+    <div class="stat"><span class="label">Status</span><span class="value green">RUNNING</span></div>
+  </div>
+</div>
+
+<div class="share">
+  <a class="x" href="https://twitter.com/intent/tweet?text=EVEZ-OS%20is%20running.%20All%206%20integrations%20live.%20Grover%20criticality%20in%203%20cycles.%20Wasserstein%20gap%20MAXIMUM.%20Wave%20TRIGGERED.%20FIVE%20AMPLIFIERS%20not%204%20billion.%20Five.%20https://evezart.github.io/evez-os-live.html" target="_blank">Share on X</a>
+  <a class="reddit" href="https://www.reddit.com/submit?url=https://evezart.github.io/evez-os-live.html&title=EVEZ-OS%20Live%3A%20All%206%20Integrations%20Running%20%2D%20Grover%20Criticality%20in%203%20Cycles" target="_blank">Share on Reddit</a>
+</div>
+
+<div class="footer">
+  X EVEZ Research Framework &middot; Steven Crawford-Maggard &middot; 277 claims &middot; 60 Moltbooks &middot; 101 pages &middot; 2026-06-29<br>
+  <a href="https://github.com/EvezArt/evez-research/tree/master/evez-os">Source Code on GitHub</a> &middot; <a href="https://evezart.github.io/">Corpus Index</a>
+</div>
+</body>
+</html>
