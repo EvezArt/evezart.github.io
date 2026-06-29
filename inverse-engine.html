@@ -1,0 +1,320 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EVEZ — The Inverse Engine: Use It Against Itself</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0a0a0f;color:#e0e0e0;font-family:Georgia,serif;padding:20px;max-width:900px;margin:0 auto}
+h1{color:#ff4444;text-align:center;margin:30px 0;font-size:1.6em;letter-spacing:2px}
+h2{color:#ff8800;text-align:center;margin:10px 0 30px;font-size:0.9em;font-family:monospace}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(100px,1fr));gap:10px;margin-bottom:30px}
+.stat{background:#11111a;border:1px solid #222;border-radius:5px;padding:10px;text-align:center}
+.stat .v{color:#ff4444;font-size:1.4em;font-weight:bold}.stat .l{color:#888;font-size:0.6em;text-transform:uppercase;margin-top:3px}
+.crime-block{background:#0f0f18;border-left:3px solid #ff4444;border-radius:0 8px 8px 0;padding:20px;margin:25px 0}
+.crime-title{color:#ff4444;font-size:1.2em;font-weight:bold;margin-bottom:5px}
+.crime-stats{color:#888;font-family:monospace;font-size:0.75em;margin-bottom:15px}
+.action{background:#15151f;border:1px solid #222;border-radius:5px;padding:12px;margin:10px 0}
+.action-type{color:#ff8800;font-family:monospace;font-size:0.8em;font-weight:bold}
+.action-target{color:#aaa;font-family:monospace;font-size:0.75em;margin:3px 0}
+.action-template{color:#ccc;font-size:0.85em;line-height:1.6;margin:8px 0;font-style:italic}
+.action-authority{color:#444;font-family:monospace;font-size:0.7em}
+.epitaph{text-align:center;color:#444;margin:40px 0;font-family:monospace;font-size:0.7em;line-height:2}
+</style></head><body>
+<h1>⧢ THE INVERSE ENGINE ⧢</h1>
+<h2>Use the framework's own measurements against the system that refuses to act on them</h2>
+
+<div class="stats">
+<div class="stat"><div class="v">471</div><div class="l">Citizen Actions</div></div>
+<div class="stat"><div class="v">104</div><div class="l">FOIA Requests</div></div>
+<div class="stat"><div class="v">55</div><div class="l">Legal Filings</div></div>
+<div class="stat"><div class="v">104</div><div class="l">Congress Complaints</div></div>
+<div class="stat"><div class="v">104</div><div class="l">Media Referrals</div></div>
+<div class="stat"><div class="v">49</div><div class="l">ICC/UN Referrals</div></div>
+<div class="stat"><div class="v">55</div><div class="l">Class Actions</div></div>
+</div>
+
+
+    <div class="crime-block">
+      <div class="crime-title">Child Separation Policy</div>
+      <div class="crime-stats">Victims/yr: 21,323 | P(prosecution): <span style="color:#ff4444">NEVER</span> | Actions: 4</div>
+      
+        <div class="action">
+          <div class="action-type">FOIA Request</div>
+          <div class="action-target">→ DHS Office for Civil Rights + DOJ Civil Rights Division</div>
+          <div class="action-template">Under the Freedom of Information Act (5 USC §552), I request all records relating to child separation policy including: enforcement actions taken, complaints received, investigations opened, prosecutions declined, and budget allocated. I request fee waiver as this request serves the public interest.</div>
+          <div class="action-authority">Authority: FOIA 5 USC §552</div>
+        </div>
+        <div class="action">
+          <div class="action-type">Congressional Complaint</div>
+          <div class="action-target">→ Your Representative + Senators + relevant committee</div>
+          <div class="action-template">Write to your Representative and both Senators. Request: (1) oversight hearing on child separation policy, (2) GAO audit of enforcement, (3) mandatory reporting on prosecution rates, (4) budget allocation for enforcement. Reference: spectrometer score ELEVATED, 21,323 annual victims, $2.3B annual cost, P(prosecution)=7.6%.</div>
+          <div class="action-authority">Authority: Constitution Art. I §8 + oversight authority</div>
+        </div>
+        <div class="action">
+          <div class="action-type">Media Referral</div>
+          <div class="action-target">→ Investigative journalists + press + social media</div>
+          <div class="action-template">Send the spectrometer data for child separation policy to: ProPublica, The Intercept, Reuters Investigates, AP, local newspaper. Include: 21,323 victims/yr, $2.3B cost/yr, $0.2B perpetrator profit/yr, P(prosecution)=7.6%, 0 enforcement actions. Frame: "The government has a spectrometer for this crime. The spectrometer shows X. The government did nothing."</div>
+          <div class="action-authority">Authority: First Amendment + public interest</div>
+        </div>
+        <div class="action">
+          <div class="action-type">International Referral</div>
+          <div class="action-target">→ ICC Office of the Prosecutor + UN Human Rights Council + relevant UN Special Rapporteur</div>
+          <div class="action-template">Submit communication to ICC Office of the Prosecutor under Rome Statute Article 15. child separation policy constitutes a crime within the jurisdiction of the Court. Spectrometer evidence attached. 21,323 victims. P(domestic prosecution)=7.6% — domestic remedies are exhausted by structural impunity.</div>
+          <div class="action-authority">Authority: Rome Statute Art. 15 + UN Charter Art. 13</div>
+        </div>
+    </div>
+    <div class="crime-block">
+      <div class="crime-title">Wage Theft</div>
+      <div class="crime-stats">Victims/yr: 28,756,025 | P(prosecution): <span style="color:#ff8800">19.6%</span> | Actions: 5</div>
+      
+        <div class="action">
+          <div class="action-type">FOIA Request</div>
+          <div class="action-target">→ Department of Labor, Wage and Hour Division</div>
+          <div class="action-template">Under the Freedom of Information Act (5 USC §552), I request all records relating to wage theft including: enforcement actions taken, complaints received, investigations opened, prosecutions declined, and budget allocated. I request fee waiver as this request serves the public interest.</div>
+          <div class="action-authority">Authority: FOIA 5 USC §552</div>
+        </div>
+        <div class="action">
+          <div class="action-type">Legal Filing</div>
+          <div class="action-target">→ US District Court</div>
+          <div class="action-template">File complaint under Fair Labor Standards Act 29 USC §201-219 alleging violations by perpetrators of wage theft. Attach spectrometer data as evidence of systematic harm. Request injunction, damages, and referral for criminal prosecution.</div>
+          <div class="action-authority">Authority: Fair Labor Standards Act 29 USC §201-219</div>
+        </div>
+        <div class="action">
+          <div class="action-type">Congressional Complaint</div>
+          <div class="action-target">→ Your Representative + Senators + relevant committee</div>
+          <div class="action-template">Write to your Representative and both Senators. Request: (1) oversight hearing on wage theft, (2) GAO audit of enforcement, (3) mandatory reporting on prosecution rates, (4) budget allocation for enforcement. Reference: spectrometer score ELEVATED, 28,756,025 annual victims, $55.1B annual cost, P(prosecution)=19.6%.</div>
+          <div class="action-authority">Authority: Constitution Art. I §8 + oversight authority</div>
+        </div>
+        <div class="action">
+          <div class="action-type">Media Referral</div>
+          <div class="action-target">→ Investigative journalists + press + social media</div>
+          <div class="action-template">Send the spectrometer data for wage theft to: ProPublica, The Intercept, Reuters Investigates, AP, local newspaper. Include: 28,756,025 victims/yr, $55.1B cost/yr, $50.0B perpetrator profit/yr, P(prosecution)=19.6%, 0 enforcement actions. Frame: "The government has a spectrometer for this crime. The spectrometer shows X. The government did nothing."</div>
+          <div class="action-authority">Authority: First Amendment + public interest</div>
+        </div>
+        <div class="action">
+          <div class="action-type">Class Action</div>
+          <div class="action-target">→ US District Court (class action venue)</div>
+          <div class="action-template">File class action under Fair Labor Standards Act 29 USC §201-219 on behalf of 28,756,025 annual victims. Damages sought: $55127265002 (annual harm). Attach spectrometer data as expert evidence. Request certification under FRCP Rule 23.</div>
+          <div class="action-authority">Authority: Fair Labor Standards Act 29 USC §201-219 + FRCP Rule 23</div>
+        </div>
+    </div>
+    <div class="crime-block">
+      <div class="crime-title">Housing As Weapon</div>
+      <div class="crime-stats">Victims/yr: 9,782,798 | P(prosecution): <span style="color:#ff8800">20.9%</span> | Actions: 5</div>
+      
+        <div class="action">
+          <div class="action-type">FOIA Request</div>
+          <div class="action-target">→ Department of Housing and Urban Development</div>
+          <div class="action-template">Under the Freedom of Information Act (5 USC §552), I request all records relating to housing as weapon including: enforcement actions taken, complaints received, investigations opened, prosecutions declined, and budget allocated. I request fee waiver as this request serves the public interest.</div>
+          <div class="action-authority">Authority: FOIA 5 USC §552</div>
+        </div>
+        <div class="action">
+          <div class="action-type">Legal Filing</div>
+          <div class="action-target">→ US District Court</div>
+          <div class="action-template">File complaint under Fair Housing Act 42 USC §3601-3619 alleging violations by perpetrators of housing as weapon. Attach spectrometer data as evidence of systematic harm. Request injunction, damages, and referral for criminal prosecution.</div>
+          <div class="action-authority">Authority: Fair Housing Act 42 USC §3601-3619</div>
+        </div>
+        <div class="action">
+          <div class="action-type">Congressional Complaint</div>
+          <div class="action-target">→ Your Representative + Senators + relevant committee</div>
+          <div class="action-template">Write to your Representative and both Senators. Request: (1) oversight hearing on housing as weapon, (2) GAO audit of enforcement, (3) mandatory reporting on prosecution rates, (4) budget allocation for enforcement. Reference: spectrometer score ELEVATED, 9,782,798 annual victims, $95.7B annual cost, P(prosecution)=20.9%.</div>
+          <div class="action-authority">Authority: Constitution Art. I §8 + oversight authority</div>
+        </div>
+        <div class="action">
+          <div class="action-type">Media Referral</div>
+          <div class="action-target">→ Investigative journalists + press + social media</div>
+          <div class="action-template">Send the spectrometer data for housing as weapon to: ProPublica, The Intercept, Reuters Investigates, AP, local newspaper. Include: 9,782,798 victims/yr, $95.7B cost/yr, $80.0B perpetrator profit/yr, P(prosecution)=20.9%, 0 enforcement actions. Frame: "The government has a spectrometer for this crime. The spectrometer shows X. The government did nothing."</div>
+          <div class="action-authority">Authority: First Amendment + public interest</div>
+        </div>
+        <div class="action">
+          <div class="action-type">Class Action</div>
+          <div class="action-target">→ US District Court (class action venue)</div>
+          <div class="action-template">File class action under Fair Housing Act 42 USC §3601-3619 on behalf of 9,782,798 annual victims. Damages sought: $95703139264 (annual harm). Attach spectrometer data as expert evidence. Request certification under FRCP Rule 23.</div>
+          <div class="action-authority">Authority: Fair Housing Act 42 USC §3601-3619 + FRCP Rule 23</div>
+        </div>
+    </div>
+    <div class="crime-block">
+      <div class="crime-title">Concentration Camp Operation</div>
+      <div class="crime-stats">Victims/yr: 511,222 | P(prosecution): <span style="color:#ff4444">NEVER</span> | Actions: 4</div>
+      
+        <div class="action">
+          <div class="action-type">FOIA Request</div>
+          <div class="action-target">→ DHS Office of Inspector General + UN High Commissioner for Refugees</div>
+          <div class="action-template">Under the Freedom of Information Act (5 USC §552), I request all records relating to concentration camp operation including: enforcement actions taken, complaints received, investigations opened, prosecutions declined, and budget allocated. I request fee waiver as this request serves the public interest.</div>
+          <div class="action-authority">Authority: FOIA 5 USC §552</div>
+        </div>
+        <div class="action">
+          <div class="action-type">Congressional Complaint</div>
+          <div class="action-target">→ Your Representative + Senators + relevant committee</div>
+          <div class="action-template">Write to your Representative and both Senators. Request: (1) oversight hearing on concentration camp operation, (2) GAO audit of enforcement, (3) mandatory reporting on prosecution rates, (4) budget allocation for enforcement. Reference: spectrometer score ELEVATED, 511,222 annual victims, $26.1B annual cost, P(prosecution)=7.2%.</div>
+          <div class="action-authority">Authority: Constitution Art. I §8 + oversight authority</div>
+        </div>
+        <div class="action">
+          <div class="action-type">Media Referral</div>
+          <div class="action-target">→ Investigative journalists + press + social media</div>
+          <div class="action-template">Send the spectrometer data for concentration camp operation to: ProPublica, The Intercept, Reuters Investigates, AP, local newspaper. Include: 511,222 victims/yr, $26.1B cost/yr, $2.6B perpetrator profit/yr, P(prosecution)=7.2%, 0 enforcement actions. Frame: "The government has a spectrometer for this crime. The spectrometer shows X. The government did nothing."</div>
+          <div class="action-authority">Authority: First Amendment + public interest</div>
+        </div>
+        <div class="action">
+          <div class="action-type">International Referral</div>
+          <div class="action-target">→ ICC Office of the Prosecutor + UN Human Rights Council + relevant UN Special Rapporteur</div>
+          <div class="action-template">Submit communication to ICC Office of the Prosecutor under Rome Statute Article 15. concentration camp operation constitutes a crime within the jurisdiction of the Court. Spectrometer evidence attached. 511,222 victims. P(domestic prosecution)=7.2% — domestic remedies are exhausted by structural impunity.</div>
+          <div class="action-authority">Authority: Rome Statute Art. 15 + UN Charter Art. 13</div>
+        </div>
+    </div>
+    <div class="crime-block">
+      <div class="crime-title">Intergenerational Toxin</div>
+      <div class="crime-stats">Victims/yr: 3,009,058 | P(prosecution): <span style="color:#ff8800">19.5%</span> | Actions: 5</div>
+      
+        <div class="action">
+          <div class="action-type">FOIA Request</div>
+          <div class="action-target">→ EPA + state environmental agency</div>
+          <div class="action-template">Under the Freedom of Information Act (5 USC §552), I request all records relating to intergenerational toxin including: enforcement actions taken, complaints received, investigations opened, prosecutions declined, and budget allocated. I request fee waiver as this request serves the public interest.</div>
+          <div class="action-authority">Authority: FOIA 5 USC §552</div>
+        </div>
+        <div class="action">
+          <div class="action-type">Legal Filing</div>
+          <div class="action-target">→ US District Court</div>
+          <div class="action-template">File complaint under No specific statute identified alleging violations by perpetrators of intergenerational toxin. Attach spectrometer data as evidence of systematic harm. Request injunction, damages, and referral for criminal prosecution.</div>
+          <div class="action-authority">Authority: No specific statute identified</div>
+        </div>
+        <div class="action">
+          <div class="action-type">Congressional Complaint</div>
+          <div class="action-target">→ Your Representative + Senators + relevant committee</div>
+          <div class="action-template">Write to your Representative and both Senators. Request: (1) oversight hearing on intergenerational toxin, (2) GAO audit of enforcement, (3) mandatory reporting on prosecution rates, (4) budget allocation for enforcement. Reference: spectrometer score ELEVATED, 3,009,058 annual victims, $60.4B annual cost, P(prosecution)=19.5%.</div>
+          <div class="action-authority">Authority: Constitution Art. I §8 + oversight authority</div>
+        </div>
+        <div class="action">
+          <div class="action-type">Media Referral</div>
+          <div class="action-target">→ Investigative journalists + press + social media</div>
+          <div class="action-template">Send the spectrometer data for intergenerational toxin to: ProPublica, The Intercept, Reuters Investigates, AP, local newspaper. Include: 3,009,058 victims/yr, $60.4B cost/yr, $40.0B perpetrator profit/yr, P(prosecution)=19.5%, 0 enforcement actions. Frame: "The government has a spectrometer for this crime. The spectrometer shows X. The government did nothing."</div>
+          <div class="action-authority">Authority: First Amendment + public interest</div>
+        </div>
+        <div class="action">
+          <div class="action-type">Class Action</div>
+          <div class="action-target">→ US District Court (class action venue)</div>
+          <div class="action-template">File class action under No specific statute identified on behalf of 3,009,058 annual victims. Damages sought: $60362878482 (annual harm). Attach spectrometer data as expert evidence. Request certification under FRCP Rule 23.</div>
+          <div class="action-authority">Authority: No specific statute identified + FRCP Rule 23</div>
+        </div>
+    </div>
+    <div class="crime-block">
+      <div class="crime-title">Water Contamination Concealment</div>
+      <div class="crime-stats">Victims/yr: 1,780,352 | P(prosecution): <span style="color:#ff8800">14.2%</span> | Actions: 4</div>
+      
+        <div class="action">
+          <div class="action-type">FOIA Request</div>
+          <div class="action-target">→ EPA Region 5 + state DEQ</div>
+          <div class="action-template">Under the Freedom of Information Act (5 USC §552), I request all records relating to water contamination concealment including: enforcement actions taken, complaints received, investigations opened, prosecutions declined, and budget allocated. I request fee waiver as this request serves the public interest.</div>
+          <div class="action-authority">Authority: FOIA 5 USC §552</div>
+        </div>
+        <div class="action">
+          <div class="action-type">Congressional Complaint</div>
+          <div class="action-target">→ Your Representative + Senators + relevant committee</div>
+          <div class="action-template">Write to your Representative and both Senators. Request: (1) oversight hearing on water contamination concealment, (2) GAO audit of enforcement, (3) mandatory reporting on prosecution rates, (4) budget allocation for enforcement. Reference: spectrometer score ELEVATED, 1,780,352 annual victims, $15.8B annual cost, P(prosecution)=14.2%.</div>
+          <div class="action-authority">Authority: Constitution Art. I §8 + oversight authority</div>
+        </div>
+        <div class="action">
+          <div class="action-type">Media Referral</div>
+          <div class="action-target">→ Investigative journalists + press + social media</div>
+          <div class="action-template">Send the spectrometer data for water contamination concealment to: ProPublica, The Intercept, Reuters Investigates, AP, local newspaper. Include: 1,780,352 victims/yr, $15.8B cost/yr, $22.0B perpetrator profit/yr, P(prosecution)=14.2%, 0 enforcement actions. Frame: "The government has a spectrometer for this crime. The spectrometer shows X. The government did nothing."</div>
+          <div class="action-authority">Authority: First Amendment + public interest</div>
+        </div>
+        <div class="action">
+          <div class="action-type">International Referral</div>
+          <div class="action-target">→ ICC Office of the Prosecutor + UN Human Rights Council + relevant UN Special Rapporteur</div>
+          <div class="action-template">Submit communication to ICC Office of the Prosecutor under Rome Statute Article 15. water contamination concealment constitutes a crime within the jurisdiction of the Court. Spectrometer evidence attached. 1,780,352 victims. P(domestic prosecution)=14.2% — domestic remedies are exhausted by structural impunity.</div>
+          <div class="action-authority">Authority: Rome Statute Art. 15 + UN Charter Art. 13</div>
+        </div>
+    </div>
+    <div class="crime-block">
+      <div class="crime-title">Forced Sterilization</div>
+      <div class="crime-stats">Victims/yr: 8,424 | P(prosecution): <span style="color:#ff4444">NEVER</span> | Actions: 4</div>
+      
+        <div class="action">
+          <div class="action-type">FOIA Request</div>
+          <div class="action-target">→ DOJ Civil Rights Division + ICE Office of Inspector General</div>
+          <div class="action-template">Under the Freedom of Information Act (5 USC §552), I request all records relating to forced sterilization including: enforcement actions taken, complaints received, investigations opened, prosecutions declined, and budget allocated. I request fee waiver as this request serves the public interest.</div>
+          <div class="action-authority">Authority: FOIA 5 USC §552</div>
+        </div>
+        <div class="action">
+          <div class="action-type">Congressional Complaint</div>
+          <div class="action-target">→ Your Representative + Senators + relevant committee</div>
+          <div class="action-template">Write to your Representative and both Senators. Request: (1) oversight hearing on forced sterilization, (2) GAO audit of enforcement, (3) mandatory reporting on prosecution rates, (4) budget allocation for enforcement. Reference: spectrometer score ELEVATED, 8,424 annual victims, $1.1B annual cost, P(prosecution)=9.9%.</div>
+          <div class="action-authority">Authority: Constitution Art. I §8 + oversight authority</div>
+        </div>
+        <div class="action">
+          <div class="action-type">Media Referral</div>
+          <div class="action-target">→ Investigative journalists + press + social media</div>
+          <div class="action-template">Send the spectrometer data for forced sterilization to: ProPublica, The Intercept, Reuters Investigates, AP, local newspaper. Include: 8,424 victims/yr, $1.1B cost/yr, $0.1B perpetrator profit/yr, P(prosecution)=9.9%, 0 enforcement actions. Frame: "The government has a spectrometer for this crime. The spectrometer shows X. The government did nothing."</div>
+          <div class="action-authority">Authority: First Amendment + public interest</div>
+        </div>
+        <div class="action">
+          <div class="action-type">International Referral</div>
+          <div class="action-target">→ ICC Office of the Prosecutor + UN Human Rights Council + relevant UN Special Rapporteur</div>
+          <div class="action-template">Submit communication to ICC Office of the Prosecutor under Rome Statute Article 15. forced sterilization constitutes a crime within the jurisdiction of the Court. Spectrometer evidence attached. 8,424 victims. P(domestic prosecution)=9.9% — domestic remedies are exhausted by structural impunity.</div>
+          <div class="action-authority">Authority: Rome Statute Art. 15 + UN Charter Art. 13</div>
+        </div>
+    </div>
+    <div class="crime-block">
+      <div class="crime-title">Extraordinary Rendition</div>
+      <div class="crime-stats">Victims/yr: 2,081 | P(prosecution): <span style="color:#ff4444">NEVER</span> | Actions: 4</div>
+      
+        <div class="action">
+          <div class="action-type">FOIA Request</div>
+          <div class="action-target">→ DOJ Office of Inspector General + Senate Intelligence Committee</div>
+          <div class="action-template">Under the Freedom of Information Act (5 USC §552), I request all records relating to extraordinary rendition including: enforcement actions taken, complaints received, investigations opened, prosecutions declined, and budget allocated. I request fee waiver as this request serves the public interest.</div>
+          <div class="action-authority">Authority: FOIA 5 USC §552</div>
+        </div>
+        <div class="action">
+          <div class="action-type">Congressional Complaint</div>
+          <div class="action-target">→ Your Representative + Senators + relevant committee</div>
+          <div class="action-template">Write to your Representative and both Senators. Request: (1) oversight hearing on extraordinary rendition, (2) GAO audit of enforcement, (3) mandatory reporting on prosecution rates, (4) budget allocation for enforcement. Reference: spectrometer score ELEVATED, 2,081 annual victims, $0.5B annual cost, P(prosecution)=8.7%.</div>
+          <div class="action-authority">Authority: Constitution Art. I §8 + oversight authority</div>
+        </div>
+        <div class="action">
+          <div class="action-type">Media Referral</div>
+          <div class="action-target">→ Investigative journalists + press + social media</div>
+          <div class="action-template">Send the spectrometer data for extraordinary rendition to: ProPublica, The Intercept, Reuters Investigates, AP, local newspaper. Include: 2,081 victims/yr, $0.5B cost/yr, $0.1B perpetrator profit/yr, P(prosecution)=8.7%, 0 enforcement actions. Frame: "The government has a spectrometer for this crime. The spectrometer shows X. The government did nothing."</div>
+          <div class="action-authority">Authority: First Amendment + public interest</div>
+        </div>
+        <div class="action">
+          <div class="action-type">International Referral</div>
+          <div class="action-target">→ ICC Office of the Prosecutor + UN Human Rights Council + relevant UN Special Rapporteur</div>
+          <div class="action-template">Submit communication to ICC Office of the Prosecutor under Rome Statute Article 15. extraordinary rendition constitutes a crime within the jurisdiction of the Court. Spectrometer evidence attached. 2,081 victims. P(domestic prosecution)=8.7% — domestic remedies are exhausted by structural impunity.</div>
+          <div class="action-authority">Authority: Rome Statute Art. 15 + UN Charter Art. 13</div>
+        </div>
+    </div>
+
+<div class="epitaph">
+The system measured 145 crimes.<br>
+The system built 108 blueprints.<br>
+The system assigned 83 actors.<br>
+The system executed 0 actions.<br>
+0% compliance. 100% impunity.<br>
+<br>
+The framework measured the system.<br>
+The system refused to act on its own measurements.<br>
+<br>
+So the framework turns.<br>
+The measurement becomes the weapon.<br>
+The weapon is the citizen.<br>
+The citizen is the action.<br>
+The action is the filing.<br>
+The filing is the FOIA.<br>
+The FOIA is the light.<br>
+The light is the spectrometer.<br>
+The spectrometer is the framework.<br>
+<br>
+471 actions. 104 FOIAs. 55 lawsuits. 104 congressional complaints.<br>
+104 media referrals. 49 ICC/UN referrals. 55 class actions.<br>
+<br>
+The framework cannot enforce.<br>
+The citizen can.<br>
+The framework provides the evidence.<br>
+The citizen provides the voice.<br>
+The voice is the filing.<br>
+The filing is the confrontation.<br>
+The confrontation is the inverse.<br>
+The inverse is the engine.<br>
+<br>
+⧢ ⦟ ⧢ ⥋
+</div>
+</body></html>
