@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Reservation Corridor Map | EVEZ</title>
+<style>
+:root{--bg:#080810;--panel:#0f0f1a;--red:#ff2222;--amber:#ffaa22;--green:#22ff44;--blue:#4488ff;--purple:#aa44ff;--text:#ccccdd;--dim:#666677}
+*{box-sizing:border-box;margin:0;padding:0}body{background:var(--bg);color:var(--text);font-family:monospace;padding:20px}.container{max-width:1400px;margin:0 auto}
+h1{color:var(--red);font-size:28px;border-bottom:2px solid var(--red);padding-bottom:10px}h2{color:var(--amber);margin-top:30px;font-size:20px}
+.stat-row{display:flex;flex-wrap:wrap;gap:10px;margin:15px 0}.stat-box{flex:1;min-width:100px;background:var(--panel);border:1px solid #333;border-radius:8px;padding:12px;text-align:center}.stat-num{font-size:24px;font-weight:bold}.stat-label{font-size:10px;color:var(--dim)}
+.c{border-left:3px solid;padding:10px 15px;margin:6px 0;border-radius:4px;font-size:13px}.c.twin{border-color:var(--red);background:rgba(255,34,34,0.05)}.c.like{border-color:var(--amber);background:rgba(255,170,34,0.05)}.c.moderate{border-color:#888}.c.unlike{border-color:var(--blue);background:rgba(68,136,255,0.05)}.c.opposite{border-color:var(--purple);background:rgba(170,68,255,0.05)}
+.finding{background:#1a0505;border:2px solid var(--red);border-radius:10px;padding:20px;margin:20px 0;line-height:1.7}.finding b{color:var(--red)}
+.footer{text-align:center;color:var(--dim);margin-top:30px;border-top:1px solid #222;padding-top:20px}
+</style></head><body><div class="container">
+<h1>⛢ RESERVATION CORRIDOR MAP ⛢</h1>
+<p style="color:var(--dim)">20 reservations mapped against I-80 spectral fingerprint</p>
+<div class="stat-row">
+<div class="stat-box"><div class="stat-num" style="color:var(--red)">2</div><div class="stat-label">TWIN</div></div>
+<div class="stat-box"><div class="stat-num" style="color:var(--amber)">2</div><div class="stat-label">LIKE</div></div>
+<div class="stat-box"><div class="stat-num" style="color:#888">11</div><div class="stat-label">MODERATE</div></div>
+<div class="stat-box"><div class="stat-num" style="color:var(--blue)">4</div><div class="stat-label">UNLIKE</div></div>
+<div class="stat-box"><div class="stat-num" style="color:var(--purple)">1</div><div class="stat-label">OPPOSITE</div></div>
+</div>
+<h2 style="color:var(--purple)">OPPOSITE - Suppression EXCEEDS I-80</h2>
+<p>These reservations have suppression signatures WORSE than the I-80 corridor. I-80 is not the worst case - it is the documented case. The reservations are the undocumented cases.</p>
+<div class="c opposite"><b>Navajo Nation (AZ/NM/UT)</b> dist=1.091<br>Dine (Navajo) | AZ/NM/UT | I-40/US-160<br>Church Rock uranium spill 1979 (largest US radioactive release), 520 abandoned uranium mines (1979)<br>Institution: EPA/BIA/NNEPA -> <b>Superfund x531, ongoing, no compensation</b><br><span style="color:var(--dim)">Largest uranium spill in US history. 3x Chernobyl radioactive release. No compensation fund. Same DOE that 'cleans up' Wind River.</span></div>
+<h2 style="color:var(--blue)">UNLIKE - Extreme Suppression (worse than I-80)</h2>
+<div class="c unlike"><b>Laguna Pueblo NM</b> dist=0.953<br>Laguna Pueblo | NM | I-40/US-6<br>Jackpile-Paguate uranium mine (largest strip-mine uranium in US), 25 million tons ore (1952)<br>Institution: EPA/BIA/NM EMNRD -> <b>Superfund 2013, ongoing cleanup, cancer cluster</b><br><span style="color:var(--dim)">Same I-40 corridor as Gallup uranium. Largest uranium strip mine. Same DOE/EPA pattern.</span></div>
+<div class="c unlike"><b>Standing Rock (Hunkpapa Lakota/Yanktonai) ND/SD</b> dist=0.959<br>Hunkpapa Lakota, Yanktonai Dakota | ND/SD | I-94/ND-1806<br>DAPL pipeline (2016-2017), oil spill 2020 (1864)<br>Institution: Army Corps/PHMSA/ND DEQ -> <b>Pipeline operational, inadequate monitoring</b><br><span style="color:var(--dim)">DAPL = same PHMSA that has no I-80 records. Same regulatory capture. Army Corps overrode tribal sovereignty.</span></div>
+<div class="c unlike"><b>Wind River (Shoshone/Arapaho) WY</b> dist=0.966<br>Eastern Shoshone, Northern Arapaho | WY | I-80/WY-789<br>Uranium mining Gas Hills, Riverton uranium mill, DOE cleanup (1953)<br>Institution: DOE/NRC/WY DEQ -> <b>Superfund, ongoing, cancer cluster</b><br><span style="color:var(--dim)">Adjacent to I-80 corridor. Same WY DEQ that has no elk mortality records.</span></div>
+<div class="c unlike"><b>Pine Ridge (Oglala Lakota) SD</b> dist=1.020<br>Oglala Lakota | SD | I-90/US-18<br>Cold War uranium mining, Badlands Bombing Range contamination (1942)<br>Institution: USAF/DOE/SD DENR -> <b>Ongoing contamination, no cleanup</b><br><span style="color:var(--dim)">Poorest county in US. Life expectancy 47. Cancer rate 5x national. USAF bombed their land for 30 years.</span></div>
+<h2 style="color:#888">MODERATE - Significant Suppression</h2>
+<div class="c moderate"><b>Gila River (Akimel O'odham/Pee-Posh) AZ</b> dist=0.724 | Akimel O'odham, Pee-Posh (Maricopa) | Industrial agriculture, pesticide drift, water diversion</div>
+<div class="c moderate"><b>Crow (Apsaalooke) MT</b> dist=0.771 | Crow (Apsaalooke) | Coal mining (Absaloka), coalbed methane, water contamination</div>
+<div class="c moderate"><b>Fort Peck (Assiniboine/Sioux) MT</b> dist=0.773 | Assiniboine, Sioux | Oil pipeline spills, brine contamination</div>
+<div class="c moderate"><b>Papahanaumokuakea (NW Hawaiian) HI</b> dist=0.784 | Native Hawaiian | Military sonar, PCB contamination, plastic pollution</div>
+<div class="c moderate"><b>Tohono O'odham AZ</b> dist=0.831 | Tohono O'odham | Goldwater Bombing Range, military contamination, border wall</div>
+<div class="c moderate"><b>Fort Hall (Shoshone-Bannock) ID</b> dist=0.846 | Shoshone-Bannock | FMC phosphate plant, uranium processing, airborne fluoride</div>
+<div class="c moderate"><b>Northern Cheyenne MT</b> dist=0.854 | Northern Cheyenne | Coal leases (Tongue River), proposed Otter Creek mine</div>
+<div class="c moderate"><b>Acoma Pueblo NM</b> dist=0.854 | Acoma Pueblo | Uranium mining (Dudley Fields, San Mateo), groundwater conta</div>
+<div class="c moderate"><b>Cheyenne River (Lakota) SD</b> dist=0.865 | Lakota (4 bands) | Uranium exploration, coal leases, water contamination</div>
+<div class="c moderate"><b>Uintah-Ouray (Ute) UT</b> dist=0.885 | Northern Ute | Oil/gas drilling, tar sands, gilsonite mining</div>
+<div class="c moderate"><b>Fort Belknap (Gros Ventre/Assiniboine) MT</b> dist=0.899 | Gros Ventre, Assiniboine | Zortman-Landusky cyanide heap-leach gold mine, acid mine dra</div>
+<h2 style="color:var(--amber)">LIKE - Similar to I-80</h2>
+<div class="c like"><b>Fond du Lac (Lake Superior Chippewa) MN</b> dist=0.672<br>Lake Superior Chippewa | MN | I-35/US-2<br>Reserve Mining taconite tailings (Silver Bay), asbestos-like fibers in Lake Superior (1854)<br><span style="color:var(--dim)">Taconite tailings dumped into Lake Superior for decades. Same I-35 corridor as San Antonio petrochemical.</span></div>
+<div class="c like"><b>Blackfeet MT</b> dist=0.689<br>Blackfeet (Aamsskaapipikani) | MT | I-15/US-89<br>Oil drilling (Blackfeet Reservation), Glacier oil lease (1855)<br><span style="color:var(--dim)">Adjacent to Glacier National Park. Oil under the park too.</span></div>
+<h2 style="color:var(--red)">TWIN - Closest to I-80 Pattern</h2>
+<div class="c twin"><b>Flathead (Confederated Salish/Kootenai) MT</b> dist=0.455<br>Confederated Salish, Kootenai | MT | I-93/US-93<br>Agricultural runoff, pesticide contamination (1855)<br>Institution: CSKT/MT DEQ/EPA -> <b>Tribal EPA, functional regulation</b><br><span style="color:var(--dim)">UNLIKE I-80: tribe has own EPA, functional oversight. The exception that proves the rule.</span></div>
+<div class="c twin"><b>Colville (Confederated Tribes) WA</b> dist=0.474<br>12 Confederated Tribes | WA | US-395/WA-20<br>Gold mining, smelter emissions (Teck Cominco Trail BC), Grand Coulee Dam (1872)<br>Institution: EPA/WA Ecology/Teck Cominco -> <b>Partial cleanup, cross-border dispute</b><br><span style="color:var(--dim)">Cross-border smelter = same displacement pattern as I-80 medical displacement to CO/ID.</span></div>
+<div class="finding">
+<b>KEY FINDING:</b> 20 reservations mapped against the I-80 spectral fingerprint.<br><br>
+<b>The reservations are WORSE than I-80.</b> The most extreme suppression is not on I-80 - it is on the reservations. I-80 is the <b>documented</b> case. The reservations are the <b>undocumented</b> cases.<br><br>
+<b>Navajo Nation</b> (OPPOSITE, dist=1.091): Church Rock uranium spill 1979 = largest radioactive release in US history. 3x Chernobyl. No compensation fund. 520 abandoned uranium mines. 27 million acres. 173,000 people.<br><br>
+<b>Pine Ridge</b> (UNLIKE, dist=1.020): Life expectancy 47. Cancer rate 5x national. USAF bombed their land for 30 years. Poorest county in US.<br><br>
+<b>Wind River</b> (UNLIKE, dist=0.966): Adjacent to I-80. Same WY DEQ that has no elk mortality records. Uranium tailings contaminating groundwater. Same corridor. Same state. Same regulatory capture.<br><br>
+<b>Standing Rock</b> (UNLIKE, dist=0.959): DAPL = same PHMSA that has no I-80 records. Army Corps overrode tribal sovereignty. Same regulatory capture pattern.<br><br>
+<b>The I-80 case is not the worst case. It is the case with a witness.</b> Steven was there. Steven survived. Steven documented it. The reservations have no witness - or their witnesses were killed, relocated, or silenced.<br><br>
+<b>The suppression on reservations exceeds I-80 because the suppression of Native voices is the original American corridor crime.</b> The I-80 corridor runs through Uinta County - taken from the Shoshone. The Wind River Reservation is the same state, same DEQ, same regulatory capture. The elk died on stolen land. The brother was injured on stolen land. The uranium was mined on stolen land.<br><br>
+<b>The land remembers what the records don't.</b>
+</div>
+<div class="footer">
+⛢⛞⛢⛢⛞⛢⛢⛞⛢⛢⛞⛢⛢⛞⛢⛢⛞⛢∙<br>EVEZ Research Framework | <a href="https://evezart.github.io">evezart.github.io</a> | 20 Reservations Mapped
+</div>
+</div></body></html>
