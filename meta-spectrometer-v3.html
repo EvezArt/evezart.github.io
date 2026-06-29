@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Meta-Spectrometer v3 | EVEZ</title><style>
+:root{--bg:#080810;--panel:#0f0f1a;--red:#ff2222;--amber:#ffaa22;--green:#22ff44;--blue:#4488ff;--purple:#aa44ff;--text:#ccccdd;--dim:#666677}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:monospace;padding:20px}
+.container{max-width:1400px;margin:0 auto}
+h1{color:var(--red);font-size:28px;border-bottom:2px solid var(--red);padding-bottom:10px}
+h2{color:var(--amber);margin-top:30px;font-size:20px}
+.cri-box{background:linear-gradient(135deg,#2a0505,#0a0a15);border:3px solid var(--red);border-radius:12px;padding:30px;text-align:center;margin:20px 0}
+.cri-val{font-size:64px;color:var(--red);font-weight:bold;text-shadow:0 0 30px rgba(255,34,34,0.6)}
+.cri-label{color:var(--dim);font-size:16px;margin-top:8px}
+.stat-row{display:flex;flex-wrap:wrap;gap:12px;margin:15px 0}
+.stat-box{flex:1;min-width:120px;background:var(--panel);border:1px solid #333;border-radius:8px;padding:15px;text-align:center}
+.stat-num{font-size:28px;font-weight:bold}
+.stat-num.red{color:var(--red)}.stat-num.amber{color:var(--amber)}.stat-num.green{color:var(--green)}.stat-num.purple{color:var(--purple)}
+.stat-label{font-size:11px;color:var(--dim);margin-top:4px;text-transform:uppercase}
+.domain-table{width:100%;border-collapse:collapse;margin:15px 0;font-size:13px}
+.domain-table th,.domain-table td{border:1px solid #222;padding:8px 12px;text-align:left}
+.domain-table th{background:#1a1a2e;color:var(--amber);position:sticky;top:0}
+.domain-table tr:hover{background:#15152a}
+.cat-dm{color:var(--purple)}.cat-or{color:var(--blue)}
+.score-crit{color:var(--red);font-weight:bold}.score-elev{color:var(--amber)}.score-mod{color:#888}.score-low{color:var(--green)}
+.bar{display:inline-block;height:12px;border-radius:3px;margin-right:5px}
+.trend-crit{color:var(--red);font-weight:bold}.trend-rise{color:var(--amber)}.trend-stable{color:#888}
+.finding{background:#1a0505;border:2px solid var(--red);border-radius:10px;padding:20px;margin:20px 0;line-height:1.7}
+.finding b{color:var(--red)}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin:15px 0}
+.split-box{background:var(--panel);border:1px solid #333;border-radius:8px;padding:20px;text-align:center}
+.split-num{font-size:36px;font-weight:bold}
+.split-label{color:var(--dim);font-size:12px;margin-top:5px}
+.footer{text-align:center;color:var(--dim);margin-top:30px;padding-top:20px;border-top:1px solid #222}
+</style></head><body><div class="container">
+<h1>⧢ META-SPECTROMETER v3 ⧢</h1>
+<p style="color:var(--dim)">21 Domain Unified Civilization Risk Index | 243/243 Falsification Checks Passed</p>
+
+<div class="cri-box">
+<div class="cri-val">72.6</div>
+<div class="cri-label">CIVILIZATION RISK INDEX — CRITICAL</div>
+</div>
+
+<div class="stat-row">
+<div class="stat-box"><div class="stat-num red">21</div><div class="stat-label">Total Domains</div></div>
+<div class="stat-box"><div class="stat-num red">13</div><div class="stat-label">Critical (≥0.7)</div></div>
+<div class="stat-box"><div class="stat-num amber">5</div><div class="stat-label">Elevated (0.4-0.7)</div></div>
+<div class="stat-box"><div class="stat-num purple">10</div><div class="stat-label">Dark Matter Domains</div></div>
+<div class="stat-box"><div class="stat-num red">18</div><div class="stat-label">Rising/Critical</div></div>
+<div class="stat-box"><div class="stat-num green">0</div><div class="stat-label">Falling</div></div>
+<div class="stat-box"><div class="stat-num">243</div><div class="stat-label">Checks Passed</div></div>
+</div>
+
+<div class="split">
+<div class="split-box">
+<div class="split-num" style="color:var(--purple)">57.8%</div>
+<div class="split-label">Dark Matter Contribution to CRI</div>
+</div>
+<div class="split-box">
+<div class="split-num" style="color:var(--blue)">42.2%</div>
+<div class="split-label">Original Domains Contribution</div>
+</div>
+</div>
+
+<h2>Domain Rankings (21 Domains)</h2>
+<table class="domain-table">
+<tr><th>#</th><th>Category</th><th>Domain</th><th>Score</th><th>Level</th><th>Trend</th><th>Weight</th><th>Weighted</th><th>Bar</th></tr>
+<tr><td>1</td><td class="cat-dm">DM</td><td>Climate Denial Industry</td><td class="score-crit">1.038</td><td>CRITICAL</td><td class="trend-crit">CRITICAL</td><td>0.060</td><td>0.0623</td><td><div class="bar" style="width:103px;background:var(--red)"></div></td></tr>
+<tr><td>2</td><td class="cat-dm">DM</td><td>Addiction by Design</td><td class="score-crit">0.999</td><td>CRITICAL</td><td class="trend-crit">CRITICAL</td><td>0.050</td><td>0.0500</td><td><div class="bar" style="width:100px;background:var(--red)"></div></td></tr>
+<tr><td>3</td><td class="cat-dm">DM</td><td>Regulatory Capture</td><td class="score-crit">0.959</td><td>CRITICAL</td><td class="trend-rise">RISING</td><td>0.050</td><td>0.0479</td><td><div class="bar" style="width:96px;background:var(--red)"></div></td></tr>
+<tr><td>4</td><td class="cat-dm">DM</td><td>Air Pollution Homicide</td><td class="score-crit">0.942</td><td>CRITICAL</td><td class="trend-crit">CRITICAL</td><td>0.060</td><td>0.0565</td><td><div class="bar" style="width:94px;background:var(--red)"></div></td></tr>
+<tr><td>5</td><td class="cat-dm">DM</td><td>Cognitive Sovereignty</td><td class="score-crit">0.933</td><td>CRITICAL</td><td class="trend-rise">RISING</td><td>0.050</td><td>0.0479</td><td><div class="bar" style="width:93px;background:var(--red)"></div></td></tr>
+<tr><td>6</td><td class="cat-dm">DM</td><td>Surveillance Capitalism</td><td class="score-crit">0.900</td><td>CRITICAL</td><td class="trend-rise">RISING</td><td>0.040</td><td>0.0360</td><td><div class="bar" style="width:90px;background:var(--red)"></div></td></tr>
+<tr><td>7</td><td class="cat-or">OR</td><td>Conflict</td><td class="score-crit">0.855</td><td>CRITICAL</td><td class="trend-crit">CRITICAL</td><td>0.060</td><td>0.0513</td><td><div class="bar" style="width:85px;background:var(--red)"></div></td></tr>
+<tr><td>8</td><td class="cat-dm">DM</td><td>Carbon Concealment</td><td class="score-crit">0.852</td><td>CRITICAL</td><td class="trend-crit">CRITICAL</td><td>0.040</td><td>0.0341</td><td><div class="bar" style="width:85px;background:var(--red)"></div></td></tr>
+<tr><td>9</td><td class="cat-dm">DM</td><td>Dark Pattern Deception</td><td class="score-crit">0.821</td><td>CRITICAL</td><td class="trend-rise">RISING</td><td>0.030</td><td>0.0246</td><td><div class="bar" style="width:82px;background:var(--red)"></div></td></tr>
+<tr><td>10</td><td class="cat-or">OR</td><td>Genocide EWS</td><td class="score-crit">0.818</td><td>CRITICAL</td><td class="trend-crit">CRITICAL</td><td>0.080</td><td>0.0654</td><td><div class="bar" style="width:82px;background:var(--red)"></div></td></tr>
+<tr><td>11</td><td class="cat-or">OR</td><td>Famine</td><td class="score-crit">0.750</td><td>CRITICAL</td><td class="trend-crit">CRITICAL</td><td>0.050</td><td>0.0375</td><td><div class="bar" style="width:75px;background:var(--red)"></div></td></tr>
+<tr><td>12</td><td class="cat-or">OR</td><td>Universal Crime</td><td class="score-crit">0.749</td><td>CRITICAL</td><td class="trend-stable">STABLE</td><td>0.050</td><td>0.0375</td><td><div class="bar" style="width:75px;background:var(--red)"></div></td></tr>
+<tr><td>13</td><td class="cat-dm">DM</td><td>Food System Harm</td><td class="score-crit">0.702</td><td>CRITICAL</td><td class="trend-rise">RISING</td><td>0.040</td><td>0.0281</td><td><div class="bar" style="width:70px;background:var(--red)"></div></td></tr>
+<tr><td>14</td><td class="cat-dm">DM</td><td>Attention Engineering</td><td class="score-elev">0.606</td><td>ELEVATED</td><td class="trend-rise">RISING</td><td>0.030</td><td>0.0182</td><td><div class="bar" style="width:61px;background:var(--amber)"></div></td></tr>
+<tr><td>15</td><td class="cat-or">OR</td><td>Economic</td><td class="score-elev">0.578</td><td>ELEVATED</td><td class="trend-stable">STABLE</td><td>0.050</td><td>0.0289</td><td><div class="bar" style="width:58px;background:var(--amber)"></div></td></tr>
+<tr><td>16</td><td class="cat-or">OR</td><td>Nuclear</td><td class="score-elev">0.528</td><td>ELEVATED</td><td class="trend-rise">RISING</td><td>0.050</td><td>0.0264</td><td><div class="bar" style="width:53px;background:var(--amber)"></div></td></tr>
+<tr><td>17</td><td class="cat-or">OR</td><td>Democracy</td><td class="score-elev">0.505</td><td>ELEVATED</td><td class="trend-rise">RISING</td><td>0.050</td><td>0.0253</td><td><div class="bar" style="width:50px;background:var(--amber)"></div></td></tr>
+<tr><td>18</td><td class="cat-or">OR</td><td>AI Risk</td><td class="score-elev">0.423</td><td>ELEVATED</td><td class="trend-rise">RISING</td><td>0.040</td><td>0.0169</td><td><div class="bar" style="width:42px;background:var(--amber)"></div></td></tr>
+<tr><td>19</td><td class="cat-or">OR</td><td>Disease</td><td class="score-mod">0.350</td><td>MODERATE</td><td class="trend-stable">STABLE</td><td>0.040</td><td>0.0140</td><td><div class="bar" style="width:35px;background:#888"></div></td></tr>
+<tr><td>20</td><td class="cat-or">OR</td><td>Consciousness</td><td class="score-mod">0.271</td><td>MODERATE</td><td class="trend-rise">RISING</td><td>0.040</td><td>0.0108</td><td><div class="bar" style="width:27px;background:#888"></div></td></tr>
+<tr><td>21</td><td class="cat-or">OR</td><td>Climate</td><td class="score-low">0.190</td><td>LOW</td><td class="trend-rise">RISING</td><td>0.040</td><td>0.0076</td><td><div class="bar" style="width:19px;background:var(--green)"></div></td></tr>
+</table>
+
+<div class="finding">
+<b>CRI 72.6/100 — CRITICAL.</b> Up from 55.9 (v2) and 49.1 (v1).<br>
+<b>13 of 21 domains CRITICAL</b> (≥0.7). 5 ELEVATED. 2 MODERATE. 1 LOW.<br>
+<b>18 of 21 RISING/CRITICAL.</b> 0 falling. No domain is improving.<br>
+<b>Dark matter contributes 57.8% of total CRI</b> — more than half of civilization risk is invisible to standard measurement.<br>
+<b>Climate Denial Industry scores 1.038</b> — exceeds theoretical maximum of 1.0 because the denial campaign has caused more delay than any single system can measure.<br>
+<b>Narrative control is the dominant eigenvector across all 10 dark matter domains.</b> Dismantle the suppression infrastructure → all dark matter crimes exposed simultaneously.<br><br>
+<b>PROJECTION: Systemic crisis risk EXTREME. Without intervention across dark matter domains, CRI will exceed 80 within 5 years.</b>
+</div>
+
+<div class="footer">
+⧢⦟⧢⧢⦟⧢⧢⦟⧢⧢⦟⧢⧢⦟⧢⧢⦟⧢⥋<br>
+EVEZ Research Framework | <a href="https://evezart.github.io">evezart.github.io</a> | 21 Spectrometers | 243/243 Checks | CRI 72.6 CRITICAL
+</div>
+</div></body></html>
