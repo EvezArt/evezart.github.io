@@ -1,1 +1,76 @@
-{"tick": 57, "rendered_at": "2026-10-12T00:30:02.053507+00:00", "sensations": [{"receptor": "touch", "value": 0.0, "novel": false}, {"receptor": "intruder", "value": 0.0, "novel": false}, {"receptor": "heartbeat", "value": 5.0, "novel": false}, {"receptor": "memory", "value": 0.0, "novel": false}, {"receptor": "hand", "value": 11.0, "novel": true}, {"receptor": "voice", "value": 510.0, "novel": false}, {"receptor": "load", "value": 1.85, "novel": true}, {"receptor": "flow", "value": 8.0, "novel": false}, {"receptor": "verity", "value": 0.0, "novel": false}, {"receptor": "delivery", "value": 0.0, "novel": false}, {"receptor": "clocks", "value": 0.0, "novel": false}, {"receptor": "enemy", "value": 880.0, "novel": true}, {"receptor": "field", "value": 0.0, "novel": false}, {"receptor": "superego", "value": 45.0, "novel": false}]}
+{
+ "tick": 57,
+ "rendered_at": "2026-10-12T00:30:02.053507+00:00",
+ "sensations": [
+  {
+   "receptor": "touch",
+   "value": 0.0,
+   "novel": false
+  },
+  {
+   "receptor": "intruder",
+   "value": 0.0,
+   "novel": false
+  },
+  {
+   "receptor": "heartbeat",
+   "value": 5.0,
+   "novel": false
+  },
+  {
+   "receptor": "memory",
+   "value": 0.0,
+   "novel": false
+  },
+  {
+   "receptor": "hand",
+   "value": 11.0,
+   "novel": true
+  },
+  {
+   "receptor": "voice",
+   "value": 510.0,
+   "novel": false
+  },
+  {
+   "receptor": "load",
+   "value": 1.85,
+   "novel": true
+  },
+  {
+   "receptor": "flow",
+   "value": 8.0,
+   "novel": false
+  },
+  {
+   "receptor": "verity",
+   "value": 0.0,
+   "novel": false
+  },
+  {
+   "receptor": "delivery",
+   "value": 0.0,
+   "novel": false
+  },
+  {
+   "receptor": "clocks",
+   "value": 0.0,
+   "novel": false
+  },
+  {
+   "receptor": "enemy",
+   "value": 880.0,
+   "novel": true
+  },
+  {
+   "receptor": "field",
+   "value": 0.0,
+   "novel": false
+  },
+  {
+   "receptor": "superego",
+   "value": 45.0,
+   "novel": false
+  }
+ ]
+}
