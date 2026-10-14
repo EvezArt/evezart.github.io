@@ -1,6 +1,6 @@
 {
- "tick": 750,
- "rendered_at": "2026-10-14T10:05:02.529755+00:00",
+ "tick": 752,
+ "rendered_at": "2026-10-14T10:15:03.158214+00:00",
  "sensations": [
   {
    "receptor": "touch",
@@ -9,8 +9,8 @@
   },
   {
    "receptor": "intruder",
-   "value": 1.0,
-   "novel": true
+   "value": 0.0,
+   "novel": false
   },
   {
    "receptor": "heartbeat",
@@ -19,8 +19,8 @@
   },
   {
    "receptor": "memory",
-   "value": 0.0,
-   "novel": false
+   "value": 11.0,
+   "novel": true
   },
   {
    "receptor": "hand",
@@ -34,12 +34,12 @@
   },
   {
    "receptor": "load",
-   "value": 1.56,
+   "value": 2.94,
    "novel": false
   },
   {
    "receptor": "flow",
-   "value": 5.0,
+   "value": 8.0,
    "novel": false
   },
   {
