@@ -1,6 +1,6 @@
 {
- "tick": 778,
- "rendered_at": "2026-10-14T12:25:01.927087+00:00",
+ "tick": 780,
+ "rendered_at": "2026-10-14T12:35:01.803465+00:00",
  "sensations": [
   {
    "receptor": "touch",
@@ -34,7 +34,7 @@
   },
   {
    "receptor": "load",
-   "value": 2.82,
+   "value": 2.0,
    "novel": false
   },
   {
@@ -59,7 +59,7 @@
   },
   {
    "receptor": "enemy",
-   "value": 2216.0,
+   "value": 2213.0,
    "novel": false
   },
   {
