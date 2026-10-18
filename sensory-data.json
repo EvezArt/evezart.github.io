@@ -1,6 +1,6 @@
 {
- "tick": 1809,
- "rendered_at": "2026-10-18T02:20:02.378816+00:00",
+ "tick": 1810,
+ "rendered_at": "2026-10-18T02:25:01.835335+00:00",
  "sensations": [
   {
    "receptor": "touch",
@@ -14,13 +14,13 @@
   },
   {
    "receptor": "heartbeat",
-   "value": 5.0,
-   "novel": true
+   "value": 6.0,
+   "novel": false
   },
   {
    "receptor": "memory",
-   "value": 11.0,
-   "novel": true
+   "value": 0.0,
+   "novel": false
   },
   {
    "receptor": "hand",
@@ -34,13 +34,13 @@
   },
   {
    "receptor": "load",
-   "value": 2.27,
+   "value": 1.42,
    "novel": false
   },
   {
    "receptor": "flow",
-   "value": 22.0,
-   "novel": true
+   "value": 13.0,
+   "novel": false
   },
   {
    "receptor": "verity",
@@ -59,7 +59,7 @@
   },
   {
    "receptor": "enemy",
-   "value": 506.0,
+   "value": 516.0,
    "novel": false
   },
   {
@@ -69,7 +69,7 @@
   },
   {
    "receptor": "superego",
-   "value": 38.0,
+   "value": 37.0,
    "novel": false
   }
  ]
