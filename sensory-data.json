@@ -1,6 +1,6 @@
 {
- "tick": 5017,
- "rendered_at": "2026-10-29T06:45:01.904015+00:00",
+ "tick": 5019,
+ "rendered_at": "2026-10-29T06:55:02.133751+00:00",
  "sensations": [
   {
    "receptor": "touch",
@@ -9,8 +9,8 @@
   },
   {
    "receptor": "intruder",
-   "value": 8.0,
-   "novel": true
+   "value": 0.0,
+   "novel": false
   },
   {
    "receptor": "heartbeat",
@@ -34,7 +34,7 @@
   },
   {
    "receptor": "load",
-   "value": 2.68,
+   "value": 1.32,
    "novel": false
   },
   {
@@ -59,7 +59,7 @@
   },
   {
    "receptor": "enemy",
-   "value": 1915.0,
+   "value": 1916.0,
    "novel": false
   },
   {
